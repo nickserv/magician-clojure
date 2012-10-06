@@ -21,6 +21,12 @@ class Array
 		end
 	end
 
+	def mode
+		occ = occurences
+		max_occ = occ.values.max
+		occ.select({ |key, value| value == max_occ }).keys
+	end
+
 	def occurences
 		occurences = {}
 		self.each { |item| occurences[item] = 0 }
