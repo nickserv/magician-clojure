@@ -24,7 +24,7 @@ class Array
 	def mode
 		occ = occurences
 		max_occ = occ.values.max
-		occ.select({ |key, value| value == max_occ }).keys
+		occ.select { |key, value| value == max_occ }.keys
 	end
 
 	def occurences
