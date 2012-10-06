@@ -37,14 +37,3 @@ class Array
 	alias :average :mean
 
 end
-
-class Integer
-
-	def factorial
-		(1..self).inject { |result, n| result * n }
-	end
-
-end
-
-PI = Math::PI
-E = Math::E
