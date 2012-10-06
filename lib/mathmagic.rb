@@ -1,7 +1,7 @@
 class Array
 
 	def sum
-		return inject { |sum, n| sum + n }
+		inject { |sum, n| sum + n }
 	end
 
 	def range
@@ -9,7 +9,7 @@ class Array
 	end
 
 	def mean
-		return sum.to_f/size
+		sum.to_f / size
 	end
 
 	def median
