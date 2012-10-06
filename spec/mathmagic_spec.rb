@@ -2,12 +2,12 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe 'Mathmagic' do
 
-	it 'should get the sum of some integers' do
-		[1,2,3].sum.should == 6
-	end
-
-	it 'should get the mean of some integers' do
-		[1,2,3].mean.should == 2.0
+	it 'should calculate the mean, median, mode, and range of a list of integers' do
+		list = [8, 9, 10, 10, 10, 11, 11, 11, 12, 13]
+		list.mean.should == 10.5
+		list.median.should == 10.5
+		list.mode.should == [10, 11]
+		list.range.should == 5
 	end
 
 end
