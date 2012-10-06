@@ -39,3 +39,6 @@ class Integer
 	end
 
 end
+
+PI = Math::PI
+E = Math::E
