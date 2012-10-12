@@ -1,7 +1,7 @@
 class Array
 
 	def sum
-		inject { |sum, n| sum + n }
+		inject(:+)
 	end
 
 	def range
