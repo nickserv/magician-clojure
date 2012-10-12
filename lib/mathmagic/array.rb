@@ -4,6 +4,10 @@ class Array
 		inject(:+)
 	end
 
+	def multiply
+		inject(:*)
+	end
+
 	def range
 		max - min
 	end
