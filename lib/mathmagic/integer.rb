@@ -5,6 +5,7 @@ class Integer
 	end
 
 	def prime?
+		return false if self == 0 or self == 1
 		for i in 2..Math.sqrt(self)
 			return false if self % i == 0
 		end
