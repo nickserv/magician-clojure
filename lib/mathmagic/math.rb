@@ -19,4 +19,12 @@ module Math
 		end
 	end
 
+	def hypotenuse(a, b)
+		Math.sqrt(a**2 + b**2)
+	end
+
+	def triplet?(a, b, c)
+		a**2 + b**2 == c**2
+	end
+
 end
