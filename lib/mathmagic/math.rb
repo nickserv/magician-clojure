@@ -27,4 +27,18 @@ module Math
 		a**2 + b**2 == c**2
 	end
 
+	def fibs length
+		sequence = []
+		until sequence.length == length do
+			if fibs.length == 0
+				sequence << 1
+			elsif fibs.length == 1
+				sequence << 1
+			else
+				sequence << fibs[-2] + fibs[-1]
+			end
+		end
+		sequence
+	end
+
 end
