@@ -1,3 +1,4 @@
+# Magician's extensions to the Array class.
 class Array
 
 	def sum

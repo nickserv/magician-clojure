@@ -1,3 +1,4 @@
+# Magician's extensions to the Integer class.
 class Integer
 
 	def factors

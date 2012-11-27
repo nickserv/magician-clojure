@@ -1,3 +1,4 @@
+# Magician's extensions to the String class.
 class String
 
 	def palindrome?

@@ -1,3 +1,4 @@
+# Magician's extensions to the Math module.
 module Math
 
 	# If we don't do this, our new methods won't get added onto Math
