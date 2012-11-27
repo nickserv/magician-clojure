@@ -32,4 +32,16 @@ class Integer
 		return true
 	end
 
+	def divisible? n
+		(self % n).zero?
+	end
+
+	def up
+		self + 1
+	end
+
+	def down
+		self - 1
+	end
+
 end
