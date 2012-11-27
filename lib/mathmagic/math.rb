@@ -3,6 +3,13 @@ module Math
 	# If we don't do this, our new methods won't get added onto Math
 	extend self
 
+	def quadratic(a, b, c)
+		left = -b
+		right = Math.sqrt(b**2 - 4*a*c)
+		bottom = 2*a
+		[ (left+right)/bottom, (left-right)/bottom ]
+	end
+
 	def permutations(n, k)
 		return n.factorial / (n-k).factorial
 	end
