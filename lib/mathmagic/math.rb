@@ -1,5 +1,8 @@
 module Math
 
+	# If we don't do this, our new methods won't get added onto Math
+	extend self
+
 	def permutations(n, k)
 		return n.factorial / (n-k).factorial
 	end
