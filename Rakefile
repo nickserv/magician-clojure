@@ -14,8 +14,8 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "mathmagic"
-  gem.homepage = "http://github.com/thenickperson/mathmagic"
+  gem.name = "magician"
+  gem.homepage = "http://github.com/thenickperson/magician"
   gem.license = "MIT"
   gem.summary = "A suite of handy methods for doing calculations in irb."
   gem.description = "A suite of handy methods for doing calculations in irb."

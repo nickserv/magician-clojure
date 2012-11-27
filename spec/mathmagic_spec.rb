@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
-describe 'Mathmagic' do
+describe 'Magician' do
 
 	it 'should calculate the mean, median, mode, and range of a list of integers' do
 		list = [8, 9, 10, 10, 10, 11, 11, 11, 12, 13]
