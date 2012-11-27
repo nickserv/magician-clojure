@@ -28,17 +28,12 @@ module Math
 	end
 
 	def fibs length
-		sequence = []
-		until sequence.length == length do
-			if fibs.length == 0
-				sequence << 1
-			elsif fibs.length == 1
-				sequence << 1
-			else
-				sequence << fibs[-2] + fibs[-1]
-			end
+		terms = []
+		until terms.length == length do
+			at_beginning = [0,1].include? terms.length
+			terms << at_beginning ? 1 : terms[-2] + terms[-1]
 		end
-		sequence
+		terms
 	end
 
 end
