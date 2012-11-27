@@ -37,12 +37,4 @@ class Integer
 		(self % n).zero?
 	end
 
-	def up
-		self + 1
-	end
-
-	def down
-		self - 1
-	end
-
 end
