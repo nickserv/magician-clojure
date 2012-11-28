@@ -85,7 +85,8 @@ module Math
 		a**2 + b**2 == c**2
 	end
 
-	# Calculates a series of Fibonacci numbers of a specified length.
+	# Calculates a series of Fibonacci numbers of a specified length. Returns nil
+	# if a negative length is given.
 	#
 	# @param [Integer] length the length of the Fibonacci series that should be
 	# returned
@@ -93,6 +94,7 @@ module Math
 	# @return [Array] a Fibonacci series of Integers with the specified length
 	# (ordered)
 	def fibs length
+		return nil if length < 0
 		terms = []
 		until terms.length == length do
 			at_beginning = [0,1].include? terms.length
