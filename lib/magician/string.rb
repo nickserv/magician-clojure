@@ -6,17 +6,7 @@ class String
 	#
 	# @return [Boolean] true if the string is a palindrome
 	def palindrome?
-		if self.length == 0
-			return true
-		elsif self.length == 1
-			return true
-		else
-			if self[0] == self[-1]
-				return self[1..-2].palindrome?
-			else
-				return false
-			end
-		end
+		self == reverse
 	end
 
 end
