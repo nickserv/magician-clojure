@@ -5,9 +5,11 @@ describe Integer do
 	it 'should get the factors of an integer' do
 		0.factors.should == nil
 		1.factors.should == [1]
-		-1.factors.should == [1]
 		6.factors.should == [1, 2, 3, 6]
 		7.factors.should == [1, 7]
+		-1.factors.should == [1]
+		-6.factors.should == [1, 2, 3, 6]
+		-7.factors.should == [1, 7]
 	end
 
 	it 'should get the factorial of an integer' do
@@ -36,8 +38,8 @@ describe Integer do
 		-1.divisible?(1).should be_true
 		12.divisible?(6).should be_true
 		6.divisible?(5).should be_false
-		9.divisible(1.5).should be_true
-		10.divisible?(0).should == nil
+		9.divisible?(1.5).should be_true
+		10.divisible?(0).should be_false
 	end
 
 end
