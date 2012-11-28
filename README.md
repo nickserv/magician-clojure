@@ -1,4 +1,4 @@
-# magician
+# magician [![Build Status](https://secure.travis-ci.org/thenickperson/magician.png?branch=master)](http://travis-ci.org/thenickperson/magician) [![Dependency Status](https://gemnasium.com/thenickperson/magician.png)](https://gemnasium.com/thenickperson/magician) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/thenickperson/magician)
 
 Description goes here.
 
