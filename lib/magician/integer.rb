@@ -6,11 +6,13 @@ class Integer
 	# @return [Array] an array of all of the factors of the current integer (in
 	# order, including 1 and the integer itself)
 	def factors
+		return nil if self == 0
+		return [1] if self.abs == 1
 		#first half
 		factors = []
-		for i in 1..self
-			if self % i == 0
-				if i < self/i
+		for i in 1..self.abs
+			if self.abs % i == 0
+				if i < self.abs/i
 					factors << i
 				else break
 				end
@@ -19,7 +21,7 @@ class Integer
 		#second half
 		factors_old = factors.dup
 		until factors_old.length == 0
-			factors << self/factors_old.pop
+			factors << self.abs/factors_old.pop
 		end
 		return factors
 	end
@@ -40,7 +42,7 @@ class Integer
 	#
 	# @return [Boolean] true if the integer is prime
 	def prime?
-		return false if self == 0 or self == 1
+		return false if self <= 1
 		for i in 2..Math.sqrt(self)
 			return false if self % i == 0
 		end
@@ -53,6 +55,7 @@ class Integer
 	#
 	# @return [Boolean] true if the integer is evenly divisible by n
 	def divisible? n
+		return false if n.zero?
 		(self % n).zero?
 	end
 
