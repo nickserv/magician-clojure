@@ -1,7 +1,9 @@
 # Magician's extensions to the Integer class.
 class Integer
 
-	# Gets all of the factors of the current integer.
+	# Gets all of the factors of the current integer. If the current integer is
+	# negative, it will be treated as if it were positive (so the results will
+	# never contain negative integers).
 	#
 	# @return [Array] an array of all of the factors of the current integer (in
 	# order, including 1 and the integer itself)
@@ -38,7 +40,8 @@ class Integer
 
 	# Returns true if the integer is prime (that is, if it is not divisible by any
 	# integer between 1 and the integer itself, exclusive). 0 and 1 are not prime
-	# numbers, though 2 is prime.
+	# numbers, though 2 is prime. Negative numbers are never considered prime in
+	# this implementation.
 	#
 	# @return [Boolean] true if the integer is prime
 	def prime?
@@ -49,7 +52,8 @@ class Integer
 		return true
 	end
 
-	# Returns true if the integer is evenly divisible by n.
+	# Returns true if the integer is evenly divisible by n. If n is 0, it returns
+	# false, since numbers cannot be divided by 0 in real number arithmetic.
 	#
 	# @param [Numeric] n the number the integer should be divided by
 	#
