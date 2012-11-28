@@ -1,3 +1,7 @@
+# Set up simplecov
+require 'simplecov'
+SimpleCov.start { add_filter '/spec/' }
+
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'rspec'
