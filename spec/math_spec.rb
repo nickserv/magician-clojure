@@ -14,25 +14,26 @@ describe Math do
 
 	it 'should get the number of permutations with n and k' do
 		Math.permutations(10, 5).should == 30_240
-		Math.permutations(5, 10).should == nil
 		Math.permutations(5, 5).should == 120
-		Math.permutations(5, 0).should == 0
+		Math.permutations(5, 0).should == 1
 		Math.permutations(0, 5).should == nil
-		Math.permutations(0, 0).should == 0
+		Math.permutations(0, 0).should == 1
+		Math.permutations(5, 10).should == nil
 		Math.permutations(-5, 5).should == nil
 		Math.permutations(5, -5).should == nil
 		Math.permutations(-5, -5).should == nil
 	end
 
 	it 'should get the number of combinations with n and k' do
-		Math.permutations(10, 5).should == 30_240
-		Math.permutations(5, 10).should == nil
-		Math.permutations(5, 5).should == 120
-		Math.permutations(5, 0).should == 0
-		Math.permutations(0, 5).should == nil
-		Math.permutations(-5, 5).should == nil
-		Math.permutations(5, -5).should == nil
-		Math.permutations(-5, -5).should == nil
+		Math.combinations(10, 5).should == 252
+		Math.combinations(5, 10).should == nil
+		Math.combinations(5, 5).should == 1
+		Math.combinations(5, 0).should == 1
+		Math.combinations(0, 5).should == nil
+		Math.combinations(0, 0).should == 1
+		Math.combinations(-5, 5).should == nil
+		Math.combinations(5, -5).should == nil
+		Math.combinations(-5, -5).should == nil
 	end
 
 	it 'should get the number of steps to finish the Collatz Conjecture' do
