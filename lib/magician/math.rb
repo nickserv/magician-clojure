@@ -22,7 +22,7 @@ module Math
 	end
 
 	# The number of size k ordered subsets of a set of size n. Equivalent to
-	# n!/(n-k)!.
+	# n!/(n-k)!. Returns nil if n < k.
 	#
 	# @param [Integer] n the size of the set to pick from
 	# @param [Integer] k the size of the ordered subsets
@@ -34,7 +34,7 @@ module Math
 	end
 
 	# The number of size k unordered subsets of a set of size n. Equivalent to
-	# n!/(k!(n-k)!).
+	# n!/(k!(n-k)!). Returns nil if n < k.
 	#
 	# @param [Integer] n the size of the set to pick from
 	# @param [Integer] k the size of the unordered subsets
