@@ -22,26 +22,26 @@ module Math
 	end
 
 	# The number of size k ordered subsets of a set of size n. Equivalent to
-	# n!/(n-k)!. Returns nil if n < k.
+	# n!/(n-k)!. Returns nil if either is negative, or if n < k.
 	#
 	# @param [Integer] n the size of the set to pick from
 	# @param [Integer] k the size of the ordered subsets
 	#
 	# @return [Integer] the number of permutations
 	def permutations(n, k)
-		return nil if n < k
+		return nil if n < 0 or k < 0 or n < k
 		return n.factorial / (n-k).factorial
 	end
 
 	# The number of size k unordered subsets of a set of size n. Equivalent to
-	# n!/(k!(n-k)!). Returns nil if n < k.
+	# n!/(k!(n-k)!). Returns nil if either is negative, or if n < k.
 	#
 	# @param [Integer] n the size of the set to pick from
 	# @param [Integer] k the size of the unordered subsets
 	#
 	# @return [Integer] the number of combinations
 	def combinations(n, k)
-		return nil if n < k
+		return nil if n < 0 or k < 0 or n < k
 		return n.factorial / (k.factorial * (n-k).factorial)
 	end
 
