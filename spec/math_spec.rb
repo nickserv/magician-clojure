@@ -3,10 +3,11 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 describe Math do
 
 	it 'should solve a quadratic formula' do
+		Math.quadratic(1, 2, 1).should == [-1, -1]
 		Math.quadratic(1, 2, 3).should == 'change me'
 		Math.quadratic(-1, -2, -3).should == 'change me'
 		Math.quadratic(1, 1, 1).should == 'change me'
-		Math.quadratic(1, 0, 0).should == 0
+		Math.quadratic(1, 0, 0).should == [0, 0]
 		Math.quadratic(0, 1, 2).should == nil
 	end
 
