@@ -12,12 +12,13 @@ module Math
 	# @param [Numeric] b the second coefficient
 	# @param [Numeric] c the third coefficient
 	#
-	# @return [Array] an array of two numbers, the two possible values for x
+	# @return [Array] a sorted array of two Floats, the two possible values for x
 	def quadratic(a, b, c)
+		return nil if a.zero?
 		left = -b
 		right = Math.sqrt(b**2 - 4*a*c)
 		bottom = 2*a
-		[ (left+right)/bottom, (left-right)/bottom ]
+		[ (left+right)/bottom, (left-right)/bottom ].sort
 	end
 
 	# The number of size k ordered subsets of a set of size n. Equivalent to
