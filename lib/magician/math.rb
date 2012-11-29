@@ -103,7 +103,7 @@ module Math
 		terms = []
 		until terms.length == length do
 			at_beginning = [0,1].include? terms.length
-			terms << at_beginning ? 1 : terms[-2] + terms[-1]
+			terms << ( at_beginning ? 1 : terms[-2] + terms[-1] )
 		end
 		terms
 	end
