@@ -28,6 +28,7 @@ module Math
 	#
 	# @return [Integer] the number of permutations
 	def permutations(n, k)
+		return nil if n < k
 		return n.factorial / (n-k).factorial
 	end
 
@@ -39,6 +40,7 @@ module Math
 	#
 	# @return [Integer] the number of combinations
 	def combinations(n, k)
+		return nil if n < k
 		return n.factorial / (k.factorial * (n-k).factorial)
 	end
 
@@ -52,12 +54,14 @@ module Math
 	# @return [Integer] the number of steps it takes to get from integer n to 1
 	# using the Collatz Conjecture (the depth)
 	def collatz(n, depth=0)
-		depth += 1
+		return nil if n < 1
 		if n == 1
 			return depth
 		elsif n % 2 == 0
+			depth += 1
 			return collatz(n/2, depth)
 		else
+			depth += 1
 			return collatz(3*n + 1, depth)
 		end
 	end
