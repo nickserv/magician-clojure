@@ -68,13 +68,17 @@ module Math
 	end
 
 	# Using the Pythagorean theorem, gets c (the length of the hypotenuse) when a
-	# and b (the lengths of the other sides of a triangle) are given.
+	# and b (the lengths of the other sides of a triangle) are given. Returns nil
+	# if either a or b is negative.
 	#
 	# @param [Numeric] a the length of the first side of the triangle
 	# @param [Numeric] b the length of the second side of the triangle
 	#
 	# @return [Numeric] the length of the hypotenuse of the triangle
 	def hypotenuse(a, b)
+		[a,b].each do |n|
+			return nil if n < 0
+		end
 		Math.sqrt(a**2 + b**2)
 	end
 
