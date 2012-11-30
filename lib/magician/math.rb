@@ -78,15 +78,19 @@ module Math
 		Math.sqrt(a**2 + b**2)
 	end
 
-	# Returns true if the three given numbers form a Pythagorean triplet (that is,
-	# if a^2+b^2=c^2).
+	# Returns true if the three given numbers are positive integers that form a
+	# Pythagorean triplet (that is, if a^2+b^2=c^2). C must be the last parameter.
 	#
-	# @param [Numeric] a the length of the first side of the triangle
-	# @param [Numeric] b the length of the second side of the triangle
-	# @param [Numeric] c the length of the hypotenuse of the triangle
+	# @param [Integer] a the length of the first side of the triangle
+	# @param [Integer] b the length of the second side of the triangle
+	# @param [Integer] c the length of the hypotenuse of the triangle
 	#
 	# @return [Boolean] true if the three numbers form a Pythagorean triplet
 	def triplet?(a, b, c)
+		[a,b,c].each do |n|
+			return nil unless n.class == Integer
+			return nil if n < 0
+		end
 		a**2 + b**2 == c**2
 	end
 
