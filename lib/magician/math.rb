@@ -30,7 +30,7 @@ module Math
 	# @return [Integer] the number of permutations
 	def permutations(n, k)
 		return nil if n < 0 or k < 0 or n < k
-		return n.factorial / (n-k).factorial
+		n.factorial / (n-k).factorial
 	end
 
 	# The number of size k unordered subsets of a set of size n. Equivalent to
@@ -42,7 +42,7 @@ module Math
 	# @return [Integer] the number of combinations
 	def combinations(n, k)
 		return nil if n < 0 or k < 0 or n < k
-		return n.factorial / (k.factorial * (n-k).factorial)
+		n.factorial / (k.factorial * (n-k).factorial)
 	end
 
 	# Get the number of steps it takes to get from integer n to 1 using the
@@ -57,13 +57,13 @@ module Math
 	def collatz(n, depth=0)
 		return nil if n < 1
 		if n == 1
-			return depth
+			depth
 		elsif n % 2 == 0
 			depth += 1
-			return collatz(n/2, depth)
+			collatz(n/2, depth)
 		else
 			depth += 1
-			return collatz(3*n + 1, depth)
+			collatz(3*n + 1, depth)
 		end
 	end
 

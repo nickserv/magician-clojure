@@ -25,7 +25,7 @@ class Integer
 		until factors_old.length == 0
 			factors << self.abs/factors_old.pop
 		end
-		return factors
+		factors
 	end
 
 	# Gets the factorial of the integer, which is equivalent to the product of all
@@ -49,7 +49,7 @@ class Integer
 		for i in 2..Math.sqrt(self)
 			return false if self % i == 0
 		end
-		return true
+		true
 	end
 
 	# Returns true if the integer is evenly divisible by n. If n is 0, it returns
