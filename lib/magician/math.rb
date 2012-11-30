@@ -74,7 +74,7 @@ module Math
 	# @param [Numeric] a the length of the first side of the triangle
 	# @param [Numeric] b the length of the second side of the triangle
 	#
-	# @return [Numeric] the length of the hypotenuse of the triangle
+	# @return [Float] the length of the hypotenuse of the triangle
 	def hypotenuse(a, b)
 		[a,b].each do |n|
 			return nil if n < 0
