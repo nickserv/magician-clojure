@@ -42,7 +42,7 @@ describe Array do
 		[1, 1, 1, 2, 2, 2, 3].mode.should == [1, 2]
 	end
 
-	it 'should get a hash with the number of occurences of items in a list' do
+	it 'should get a hash with the number of occurrences of items in a list' do
 		[].occurences.should == {}
 		[4].occurences.should == { 4=>1 }
 		[1, 2, 2, 5].occurences.should == { 1=>1, 2=>2, 5=>1 }

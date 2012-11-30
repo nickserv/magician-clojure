@@ -36,7 +36,7 @@ describe Math do
 		Math.combinations(-5, -5).should == nil
 	end
 
-	it 'should get the number of steps to finish the Collatz Conjecture' do
+	it 'should get the number of steps to finish the Collatz conjecture' do
 		Math.collatz(-1).should == nil
 		Math.collatz(0).should == nil
 		Math.collatz(1).should == 0
