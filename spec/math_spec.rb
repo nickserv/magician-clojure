@@ -45,8 +45,25 @@ describe Math do
 		Math.collatz(100).should == 25
 	end
 
-	it 'should get the length of a hypotenuse with the Pythagorean theorem'
-	it 'should determine if three given numbers form a Pythagorean triplet'
+	it 'should get the length of a hypotenuse with the Pythagorean theorem' do
+		Math.hypotenuse(0, 0).should == 0
+		Math.hypotenuse(Math.sqrt(5), 2).should == 3
+		Math.hypotenuse(1, 1).should == Math.sqrt(2)
+		Math.hypotenuse(5, -5).should be_nil
+	end
+
+	it 'should determine if three given numbers form a Pythagorean triplet' do
+		Math.triplet?(3, 4, 5).should be_true
+		Math.triplet?(5, 12, 13).should be_true
+		Math.triplet?(7, 24, 25).should be_true
+		Math.triplet?(8, 15, 17).should be_true
+		Math.triplet?(4, 3, 5).should be_true
+		Math.triplet?(5, 4, 3).should be_false
+		Math.triplet?(0, 0, 0).should be_false
+		Math.triplet?(Math.sqrt(5), 2, 3).should be_false
+		Math.triplet?(1, 1, Math.sqrt(2)).should be_false
+		Math.triplet?(-1, -1, -1).should be_false
+	end
 
 	it 'should calculate a series of Fibonacci numbers of a specified length' do
 		Math.fibs(-1).should == nil
