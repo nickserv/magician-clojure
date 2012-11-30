@@ -1,6 +1,6 @@
 # magician [![Build Status](https://secure.travis-ci.org/thenickperson/magician.png?branch=master)](http://travis-ci.org/thenickperson/magician) [![Dependency Status](https://gemnasium.com/thenickperson/magician.png)](https://gemnasium.com/thenickperson/magician) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/thenickperson/magician)
 
-Description goes here.
+A suite of handy methods for doing calculations in irb.
 
 ## Contributing to magician
  
@@ -16,4 +16,3 @@ Description goes here.
 
 Copyright (c) 2012 Nicolas McCurdy. See LICENSE.txt for
 further details.
-
