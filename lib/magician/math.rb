@@ -91,10 +91,11 @@ module Math
 	#
 	# @return [Boolean] true if the three numbers form a Pythagorean triplet
 	def triplet?(a, b, c)
+		inputs_are_valid = true
 		[a,b,c].each do |n|
-			return nil unless n.class == Integer
-			return nil if n < 0
+			inputs_are_valid = false if n < 1 or not n.class <= Integer
 		end
+		return false unless inputs_are_valid
 		a**2 + b**2 == c**2
 	end
 
