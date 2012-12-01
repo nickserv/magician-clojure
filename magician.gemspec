@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "magician"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nicolas McCurdy"]
-  s.date = "2012-11-30"
+  s.date = "2012-12-01"
   s.description = "A suite of handy methods for doing calculations in irb."
   s.email = "thenickperson@gmail.com"
   s.extra_rdoc_files = [
@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
     "lib/magician/numeric.rb",
     "lib/magician/shortcuts.rb",
     "lib/magician/string.rb",
+    "magician.gemspec",
     "spec/array_spec.rb",
     "spec/integer_spec.rb",
     "spec/math_spec.rb",
