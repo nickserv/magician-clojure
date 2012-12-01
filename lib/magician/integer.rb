@@ -3,7 +3,7 @@ class Integer
 
 	# Gets all of the factors of the current integer. If the current integer is
 	# negative, it will be treated as if it were positive (so the results will
-	# never contain negative integers).
+	# never contain negative integers). Returns nil if the integer is 0.
 	#
 	# @return [Array] an array of all of the factors of the current integer (in
 	# order, including 1 and the integer itself)

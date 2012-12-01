@@ -6,7 +6,7 @@ module Math
 
 	# Solves a quadratic formula of the form "ax^2+bx+c=0" for x, where a is not
 	# 0. It asks for the three coefficients of the function (a, b, and c), and
-	# returns the two possible values for x.
+	# returns the two possible values for x. Returns nil if a is 0.
 	#
 	# @param [Numeric] a the first coefficient (must not be 0)
 	# @param [Numeric] b the second coefficient
@@ -47,6 +47,7 @@ module Math
 
 	# Get the number of steps it takes to get from integer n to 1 using the
 	# Collatz conjecture (set http://en.wikipedia.org/wiki/Collatz_conjecture).
+	# Returns nil if n < 1.
 	#
 	# @param [Integer] n the number to put into the Collatz conjecture initially
 	# @param [Integer] depth the number of steps that have passed so far (should
