@@ -10,53 +10,60 @@ class Array
 		select { |item| item.class <= Numeric }
 	end
 
-	# Gets the sum of the numbers in the array. The sum of an empty array is 0.
+	# Gets the sum of the numbers in the array. The sum of an array with no
+	# numbers is 0.
 	#
 	# @return [Numeric] the sum of the numbers in the array
 	def sum
-		return 0 if self.empty?
-		inject(:+)
+		nums = numerics
+		return 0 if nums.empty?
+		nums.inject(:+)
 	end
 
-	# Gets the product of the numbers in the array. The product of an empty array
-	# is 1.
+	# Gets the product of the numbers in the array. The product of an array with
+	# no numbers is 1.
 	#
 	# @return [Numeric] the product of the numbers in the array
 	def product
-		return 1 if self.empty?
-		inject(:*)
+		nums = numerics
+		return 1 if nums.empty?
+		nums.inject(:*)
 	end
 
 	# Gets the range of the numbers in the array (maximum - minimum). The range of
-	# an empty array is nil.
+	# an array with no numbers is nil.
 	#
 	# @return [Numeric] the range of the numbers in the array
 	def range
-		return nil if self.empty?
-		max - min
+		nums = numerics
+		return nil if nums.empty?
+		nums.max - nums.min
 	end
 
-	# Gets the mean (average) of the numbers in the array. The mean of an empty
-	# array is nil.
+	# Gets the mean (average) of the numbers in the array. The mean of an array
+	# with no numbers is nil.
 	#
 	# @return [Float] the mean (average) of the numbers in the array
 	def mean
-		return nil if self.empty?
-		sum.to_f / size
+		nums = numerics
+		return nil if nums.empty?
+		nums.sum.to_f / nums.size
 	end
 
 	# Gets the median of the numbers in the array (the value in the middle of a
-	# sorted version of the array). If the array has an even length, the middle
-	# two values are averaged. The median of an empty array is nil.
+	# sorted version of the array, numbers only). If the array has an even number
+	# of numbers, the middle two numbers will be averaged. The median of an array
+	# with no numbers is nil.
 	#
 	# @return [Numeric] the median of the numbers in the array
 	def median
-		return nil if self.empty?
-		sorted = sort
+		nums = numerics
+		return nil if nums.empty?
+		sorted = nums.sort
 		if sorted.length.odd?
-			self[length/2]
+			nums[nums.length/2]
 		else
-			(self[length/2-1] + self[length/2]) / 2.0
+			(nums[nums.length/2-1] + nums[nums.length/2]) / 2.0
 		end
 	end
 
