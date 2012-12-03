@@ -3,7 +3,6 @@
 A suite of handy methods for doing calculations in irb.
 
 ## Contributing to magician
- 
 - Check out the latest master to make sure the feature hasn't been implemented
 	or the bug hasn't been fixed yet.
 - Check out the issue tracker to make sure someone already hasn't requested it
@@ -18,6 +17,4 @@ A suite of handy methods for doing calculations in irb.
 	isolate to its own commit so I can cherry-pick around it.
 
 ## Copyright
-
-Copyright (c) 2012 Nicolas McCurdy. See LICENSE.txt for
-further details.
+Copyright (c) 2012 Nicolas McCurdy. See LICENSE.txt for further details.
