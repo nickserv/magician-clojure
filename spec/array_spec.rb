@@ -2,6 +2,13 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe Array do
 
+	it 'should return all of its Numerics in order' do
+		[1, 2.0, -3].numerics.should == [1, 2.0, -3]
+		['string'].numerics.should == []
+		[].numerics.should == []
+		[1, 'two', 3, 'four'].numerics.should == [1, 3]
+	end
+
 	it 'should calculate its sum' do
 		[].sum.should == 0
 		['string'].sum.should == 0

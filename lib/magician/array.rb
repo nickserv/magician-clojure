@@ -1,6 +1,15 @@
 # Magician's extensions to the Array class.
 class Array
 
+	# Returns all numbers from the array, in order. This is done by choosing all
+	# objects from the array that are instances of Numeric or one of its
+	# subclasses.
+	#
+	# @return [Array] a new array containing only Numerics
+	def numerics
+		select { |item| item.class <= Numeric }
+	end
+
 	# Gets the sum of the numbers in the array. The sum of an empty array is 0.
 	#
 	# @return [Numeric] the sum of the numbers in the array
