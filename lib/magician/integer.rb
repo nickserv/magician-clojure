@@ -52,15 +52,4 @@ class Integer
 		true
 	end
 
-	# Returns true if the integer is evenly divisible by n. If n is 0, it returns
-	# false, since numbers cannot be divided by 0 in real number arithmetic.
-	#
-	# @param [Numeric] n the number the integer should be divided by
-	#
-	# @return [Boolean] true if the integer is evenly divisible by n
-	def divisible? n
-		return false if n.zero?
-		(self % n).zero?
-	end
-
 end
