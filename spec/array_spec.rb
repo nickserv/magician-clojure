@@ -48,7 +48,7 @@ describe Array do
 		[].mode.should == nil
 		['string'].mode.should == 'string'
 		[4].mode.should == [4]
-		['string', 4].mode.should == [4]
+		['string', 4].mode.should == ['string',4]
 		[1, 2, 1, 3, 1, 4].mode.should == [1]
 		[1, 1, 1, 2, 2, 2, 3].mode.should == [1, 2]
 	end
