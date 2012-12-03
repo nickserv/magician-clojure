@@ -2,6 +2,36 @@
 
 A suite of handy methods for doing calculations in irb.
 
+## Examples
+```ruby
+>> require 'magician'
+=> true
+>> [1,2,3].sum
+=> 6
+>> [1,2,3].mean
+=> 2.0
+>> [1,100,5].range
+=> 99
+>> [1,2,2,3,3,3].occurences
+=> {1=>1, 2=>2, 3=>3}
+>> 6.factors
+=> [1, 2, 3, 6]
+>> 6.divisible? 3
+=> true
+>> 7.prime?
+=> true
+>> 5.factorial
+=> 120
+>> Math.combinations(10,5)
+=> 252
+>> Math.triplet?(3,4,5)
+=> true
+>> Math.quadratic(2,1,0)
+=> [-0.5, 0.0]
+>> 'racecar'.palindrome?
+=> true
+```
+
 ## Contributing to magician
 - Check out the latest master to make sure the feature hasn't been implemented
 	or the bug hasn't been fixed yet.
