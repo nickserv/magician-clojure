@@ -13,7 +13,7 @@ class Numeric
 		(self % n).zero?
 	end
 
-	# Performs self.to_s[selection].to_i on the number. Note that for floats, the
+	# Performs to_s[selection].to_i on the number. Note that for floats, the
 	# decimal counts as a digit within the string.
 	# TODO: Let this intelligently convert back to an Integer or Float.
 	#
@@ -23,7 +23,7 @@ class Numeric
 	# @return [Integer] substring of the number (using []), converted to an
 	# Integer
 	def digits selection
-		self.to_s[selection].to_i
+		to_s[selection].to_i
 	end
 
 end

@@ -73,7 +73,7 @@ class Array
 	# @return [Array] an array of all of the items in the array that occur the
 	# most frequently (they must all have the same number of occurrences)
 	def mode
-		return nil if self.empty?
+		return nil if empty?
 		occ = occurences
 		max_occ = occ.values.max
 		occ.select { |key, value| value == max_occ }.keys
@@ -88,8 +88,8 @@ class Array
 	# array
 	def occurences
 		occurences = {}
-		self.each { |item| occurences[item] = 0 }
-		self.each { |item| occurences[item] += 1 }
+		each { |item| occurences[item] = 0 }
+		each { |item| occurences[item] += 1 }
 		occurences
 	end
 

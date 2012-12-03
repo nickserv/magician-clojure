@@ -9,12 +9,12 @@ class Integer
 	# order, including 1 and the integer itself)
 	def factors
 		return nil if self == 0
-		return [1] if self.abs == 1
+		return [1] if abs == 1
 		#first half
 		factors = []
-		for i in 1..self.abs
-			if self.abs % i == 0
-				if i < self.abs/i
+		for i in 1..abs
+			if abs % i == 0
+				if i < abs/i
 					factors << i
 				else break
 				end
@@ -23,7 +23,7 @@ class Integer
 		#second half
 		factors_old = factors.dup
 		until factors_old.length == 0
-			factors << self.abs/factors_old.pop
+			factors << abs/factors_old.pop
 		end
 		factors
 	end
