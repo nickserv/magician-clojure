@@ -32,14 +32,4 @@ describe Integer do
 		-6.prime?.should be_false
 	end
 
-	it 'should determine if it is divisible by another number' do
-		0.divisible?(5).should be_true
-		1.divisible?(6).should be_false
-		-1.divisible?(1).should be_true
-		12.divisible?(6).should be_true
-		6.divisible?(5).should be_false
-		9.divisible?(1.5).should be_true
-		10.divisible?(0).should be_false
-	end
-
 end
