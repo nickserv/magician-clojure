@@ -1,5 +1,6 @@
 ## 0.2.0
 - Create this changelog
+- Add examples to the readme, along with a link to magician's docs
 - Minor code style improvements
 - Move the divisible? instance method from Integer to Numeric so it can be used
 	on more types of numbers
