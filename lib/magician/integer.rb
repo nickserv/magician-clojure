@@ -11,21 +11,13 @@ class Integer
 		return nil if self == 0
 		return [1] if abs == 1
 		#first half
-		factors = []
-		for i in 1..abs
-			if abs % i == 0
-				if i < abs/i
-					factors << i
-				else break
-				end
+		factors = [1]
+		2.upto((abs/2).to_i) do |i|
+			if abs%i == 0
+				factors << i 
 			end
 		end
-		#second half
-		factors_old = factors.dup
-		until factors_old.length == 0
-			factors << abs/factors_old.pop
-		end
-		factors
+		factors << abs
 	end
 
 	# Gets the factorial of the integer, which is equivalent to the product of all
@@ -50,6 +42,14 @@ class Integer
 			return false if self % i == 0
 		end
 		true
+	end
+
+	# Returns true if the number is pandigital. That is the number contains the
+	# each of the digits 1 through 9 exactly once.
+	#
+	# @return [Boolean] true if pandigital
+	def pandigital?
+		to_s.split(//).sort!.join.to_i == 123456789
 	end
 
 end
