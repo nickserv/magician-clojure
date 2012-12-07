@@ -87,8 +87,7 @@ class Array
 	# @return [Hash] a hash table of the occurrences of each item from the original
 	# array
 	def occurences
-		occurences = {}
-		each { |item| occurences[item] = 0 }
+		occurences = Hash.new(0)
 		each { |item| occurences[item] += 1 }
 		occurences
 	end
