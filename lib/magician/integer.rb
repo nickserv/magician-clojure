@@ -12,7 +12,7 @@ class Integer
 		return [1] if abs == 1
 		#first half
 		factors = []
-		for i in 1..abs
+		(1..abs).each do |i|
 			if abs % i == 0
 				if i < abs/i
 					factors << i
@@ -46,7 +46,7 @@ class Integer
 	# @return [Boolean] true if the integer is prime
 	def prime?
 		return false if self <= 1
-		for i in 2..Math.sqrt(self)
+		(2..Math.sqrt(self)).each do |i|
 			return false if self % i == 0
 		end
 		true
