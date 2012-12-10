@@ -57,13 +57,12 @@ class Array
 	#
 	# @return [Numeric] the median of the numbers in the array
 	def median
-		nums = numerics
-		return nil if nums.empty?
-		sorted = nums.sort
+		sorted = numerics.sort
+		return nil if sorted.empty?
 		if sorted.length.odd?
-			nums[nums.length/2]
+			sorted[sorted.length/2]
 		else
-			(nums[nums.length/2-1] + nums[nums.length/2]) / 2.0
+			(sorted[sorted.length/2-1] + sorted[sorted.length/2]) / 2.0
 		end
 	end
 
