@@ -14,7 +14,7 @@ class Integer
 		factors = [1]
 		2.upto((abs/2).to_i) do |i|
 			if abs%i == 0
-				factors << i 
+				factors << i
 			end
 		end
 		factors << abs

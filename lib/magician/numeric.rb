@@ -22,7 +22,7 @@ class Numeric
 	#
 	# @return [Integer] substring of the number (using []), converted to an
 	# Integer
-	# 
+	#
 	# @deprecated because it's useless and wrong
 	def digits selection
 		to_s[selection].to_i
