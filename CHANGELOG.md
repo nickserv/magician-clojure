@@ -1,3 +1,7 @@
+## 0.2.1
+- Fix an issue with Array#median giving inaccurate results (it wasn't sorting
+	the list)
+
 ## 0.2.0
 - Create this changelog
 - Add examples to the readme, along with a link to magician's docs
