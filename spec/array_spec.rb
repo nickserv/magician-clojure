@@ -47,7 +47,7 @@ describe Array do
 		[].median.should == nil
 		[4].median.should == 4.0
 		['string', 4].median.should == 4.0
-		[2, 1, 3, 5, 4].median.should == 3.0
+		[2, 1, 5, 4, 3].median.should == 3.0
 		[1, 2, 3, 4].median.should == 2.5
 	end
 
