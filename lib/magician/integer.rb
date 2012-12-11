@@ -10,7 +10,6 @@ class Integer
 	def factors
 		return nil if self == 0
 		return [1] if abs == 1
-		#first half
 		factors = [1]
 		2.upto((abs/2).to_i) do |i|
 			if abs%i == 0
@@ -44,10 +43,10 @@ class Integer
 		true
 	end
 
-	# Returns true if the number is pandigital. That is the number contains the
-	# each of the digits 1 through 9 exactly once.
+	# Returns true if the integer is pandigital. That is, the integer contains
+	# each of the digits from 1 to 9 exactly once.
 	#
-	# @return [Boolean] true if pandigital
+	# @return [Boolean] true if the integer is pandigital
 	def pandigital?
 		to_s.split(//).sort!.join.to_i == 123456789
 	end

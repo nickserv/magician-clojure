@@ -23,7 +23,7 @@ class Numeric
 	# @return [Integer] substring of the number (using []), converted to an
 	# Integer
 	#
-	# @deprecated because it's useless and wrong
+	# @deprecated Avoid using this any more. It's inaccurate and not very useful.
 	def digits selection
 		to_s[selection].to_i
 	end
