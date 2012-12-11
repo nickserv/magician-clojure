@@ -32,4 +32,6 @@ describe Integer do
 		-6.prime?.should be_false
 	end
 
+	it 'should determine if it is pandigital'
+
 end
