@@ -9,4 +9,12 @@ class String
 		self == reverse
 	end
 
+	def letter_score
+		sum = 0
+		downcase.each_char do |c|
+			sum += c.ord - 96 #index of 'a' in ascii - 1, so our indexes start at 0
+		end
+		sum
+	end
+
 end
