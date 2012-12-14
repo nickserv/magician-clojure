@@ -118,4 +118,21 @@ module Math
 		terms
 	end
 
+	def primes n
+		# See http://www.algorithmist.com/index.php/Prime_Sieve_of_Eratosthenes
+		primes = (2..n).to_a
+		i = 2
+		while i**2 <= n
+			if primes.include? i
+				m = i**2
+				while i**2 <= m and m <= n
+					primes.delete m
+					m += i
+				end
+			end
+			i += 1
+		end
+		primes
+	end
+
 end

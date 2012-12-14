@@ -74,4 +74,13 @@ describe Math do
 		Math.fibs(10).should == [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 	end
 
+	it 'should find all prime numbers up to different integers' do
+		Math.primes(0).should == []
+		Math.primes(1).should == []
+		Math.primes(2).should == [2]
+		Math.primes(5).should == [2,3,5]
+		Math.primes(10).should == [2,3,5,7]
+		Math.primes(100).should == [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97]
+	end
+
 end
