@@ -1,138 +1,138 @@
 # Magician's extensions to the Math module.
 module Math
 
-	# If we don't do this, our new methods won't get added onto Math.
-	extend self
+  # If we don't do this, our new methods won't get added onto Math.
+  extend self
 
-	# Solves a quadratic formula of the form "ax^2+bx+c=0" for x, where a is not
-	# 0. It asks for the three coefficients of the function (a, b, and c), and
-	# returns the two possible values for x. Returns nil if a is 0.
-	#
-	# @param [Numeric] a the first coefficient (must not be 0)
-	# @param [Numeric] b the second coefficient
-	# @param [Numeric] c the third coefficient
-	#
-	# @return [Array] a sorted array of two Floats, the two possible values for x
-	def quadratic(a, b, c)
-		return nil if a.zero?
-		left = -b
-		right = Math.sqrt(b**2 - 4*a*c)
-		bottom = 2*a
-		[ (left+right)/bottom, (left-right)/bottom ].sort
-	end
+  # Solves a quadratic formula of the form "ax^2+bx+c=0" for x, where a is not
+  # 0. It asks for the three coefficients of the function (a, b, and c), and
+  # returns the two possible values for x. Returns nil if a is 0.
+  #
+  # @param [Numeric] a the first coefficient (must not be 0)
+  # @param [Numeric] b the second coefficient
+  # @param [Numeric] c the third coefficient
+  #
+  # @return [Array] a sorted array of two Floats, the two possible values for x
+  def quadratic(a, b, c)
+    return nil if a.zero?
+    left = -b
+    right = Math.sqrt(b**2 - 4*a*c)
+    bottom = 2*a
+    [ (left+right)/bottom, (left-right)/bottom ].sort
+  end
 
-	# The number of size k ordered subsets of a set of size n. Equivalent to
-	# n!/(n-k)!. Returns nil if either is negative, or if n < k.
-	#
-	# @param [Integer] n the size of the set to pick from
-	# @param [Integer] k the size of the ordered subsets
-	#
-	# @return [Integer] the number of permutations
-	def permutations(n, k)
-		return nil if n < 0 or k < 0 or n < k
-		n.factorial / (n-k).factorial
-	end
+  # The number of size k ordered subsets of a set of size n. Equivalent to
+  # n!/(n-k)!. Returns nil if either is negative, or if n < k.
+  #
+  # @param [Integer] n the size of the set to pick from
+  # @param [Integer] k the size of the ordered subsets
+  #
+  # @return [Integer] the number of permutations
+  def permutations(n, k)
+    return nil if n < 0 or k < 0 or n < k
+    n.factorial / (n-k).factorial
+  end
 
-	# The number of size k unordered subsets of a set of size n. Equivalent to
-	# n!/(k!(n-k)!). Returns nil if either is negative, or if n < k.
-	#
-	# @param [Integer] n the size of the set to pick from
-	# @param [Integer] k the size of the unordered subsets
-	#
-	# @return [Integer] the number of combinations
-	def combinations(n, k)
-		return nil if n < 0 or k < 0 or n < k
-		n.factorial / (k.factorial * (n-k).factorial)
-	end
+  # The number of size k unordered subsets of a set of size n. Equivalent to
+  # n!/(k!(n-k)!). Returns nil if either is negative, or if n < k.
+  #
+  # @param [Integer] n the size of the set to pick from
+  # @param [Integer] k the size of the unordered subsets
+  #
+  # @return [Integer] the number of combinations
+  def combinations(n, k)
+    return nil if n < 0 or k < 0 or n < k
+    n.factorial / (k.factorial * (n-k).factorial)
+  end
 
-	# Get the number of steps it takes to get from integer n to 1 using the
-	# Collatz conjecture (set http://en.wikipedia.org/wiki/Collatz_conjecture).
-	# Returns nil if n < 1.
-	#
-	# @param [Integer] n the number to put into the Collatz conjecture initially
-	# @param [Integer] depth the number of steps that have passed so far (should
-	# not be modified unless this is being cached carefully)
-	#
-	# @return [Integer] the number of steps it takes to get from integer n to 1
-	# using the Collatz conjecture (the depth)
-	def collatz(n, depth=0)
-		return nil if n < 1
-		if n == 1
-			depth
-		elsif n % 2 == 0
-			depth += 1
-			collatz(n/2, depth)
-		else
-			depth += 1
-			collatz(3*n + 1, depth)
-		end
-	end
+  # Get the number of steps it takes to get from integer n to 1 using the
+  # Collatz conjecture (set http://en.wikipedia.org/wiki/Collatz_conjecture).
+  # Returns nil if n < 1.
+  #
+  # @param [Integer] n the number to put into the Collatz conjecture initially
+  # @param [Integer] depth the number of steps that have passed so far (should
+  # not be modified unless this is being cached carefully)
+  #
+  # @return [Integer] the number of steps it takes to get from integer n to 1
+  # using the Collatz conjecture (the depth)
+  def collatz(n, depth=0)
+    return nil if n < 1
+    if n == 1
+      depth
+    elsif n % 2 == 0
+      depth += 1
+      collatz(n/2, depth)
+    else
+      depth += 1
+      collatz(3*n + 1, depth)
+    end
+  end
 
-	# Using the Pythagorean theorem, gets c (the length of the hypotenuse) when a
-	# and b (the lengths of the other sides of a triangle) are given. Returns nil
-	# if either a or b is negative.
-	#
-	# @param [Numeric] a the length of the first side of the triangle
-	# @param [Numeric] b the length of the second side of the triangle
-	#
-	# @return [Float] the length of the hypotenuse of the triangle
-	def hypotenuse(a, b)
-		[a,b].each do |n|
-			return nil if n < 0
-		end
-		Math.sqrt(a**2 + b**2)
-	end
+  # Using the Pythagorean theorem, gets c (the length of the hypotenuse) when a
+  # and b (the lengths of the other sides of a triangle) are given. Returns nil
+  # if either a or b is negative.
+  #
+  # @param [Numeric] a the length of the first side of the triangle
+  # @param [Numeric] b the length of the second side of the triangle
+  #
+  # @return [Float] the length of the hypotenuse of the triangle
+  def hypotenuse(a, b)
+    [a,b].each do |n|
+      return nil if n < 0
+    end
+    Math.sqrt(a**2 + b**2)
+  end
 
-	# Returns true if the three given numbers are positive integers that form a
-	# Pythagorean triplet (that is, if a^2+b^2=c^2). C must be the last parameter.
-	#
-	# @param [Integer] a the length of the first side of the triangle
-	# @param [Integer] b the length of the second side of the triangle
-	# @param [Integer] c the length of the hypotenuse of the triangle
-	#
-	# @return [Boolean] true if the three numbers form a Pythagorean triplet
-	def triplet?(a, b, c)
-		inputs_are_valid = true
-		[a,b,c].each do |n|
-			inputs_are_valid = false if n < 1 or not n.class <= Integer
-		end
-		return false unless inputs_are_valid
-		a**2 + b**2 == c**2
-	end
+  # Returns true if the three given numbers are positive integers that form a
+  # Pythagorean triplet (that is, if a^2+b^2=c^2). C must be the last parameter.
+  #
+  # @param [Integer] a the length of the first side of the triangle
+  # @param [Integer] b the length of the second side of the triangle
+  # @param [Integer] c the length of the hypotenuse of the triangle
+  #
+  # @return [Boolean] true if the three numbers form a Pythagorean triplet
+  def triplet?(a, b, c)
+    inputs_are_valid = true
+    [a,b,c].each do |n|
+      inputs_are_valid = false if n < 1 or not n.class <= Integer
+    end
+    return false unless inputs_are_valid
+    a**2 + b**2 == c**2
+  end
 
-	# Calculates a series of Fibonacci numbers of a specified length. Returns nil
-	# if a negative length is given.
-	#
-	# @param [Integer] length the length of the Fibonacci series that should be
-	# returned
-	#
-	# @return [Array] a Fibonacci series of Integers with the specified length
-	# (ordered)
-	def fibs length
-		return nil if length < 0
-		terms = []
-		until terms.length == length do
-			at_beginning = [0,1].include? terms.length
-			terms << ( at_beginning ? 1 : terms[-2] + terms[-1] )
-		end
-		terms
-	end
+  # Calculates a series of Fibonacci numbers of a specified length. Returns nil
+  # if a negative length is given.
+  #
+  # @param [Integer] length the length of the Fibonacci series that should be
+  # returned
+  #
+  # @return [Array] a Fibonacci series of Integers with the specified length
+  # (ordered)
+  def fibs length
+    return nil if length < 0
+    terms = []
+    until terms.length == length do
+      at_beginning = [0,1].include? terms.length
+      terms << ( at_beginning ? 1 : terms[-2] + terms[-1] )
+    end
+    terms
+  end
 
-	def primes n
-		# See http://www.algorithmist.com/index.php/Prime_Sieve_of_Eratosthenes
-		primes = (2..n).to_a
-		i = 2
-		while i**2 <= n
-			if primes.include? i
-				m = i**2
-				while i**2 <= m and m <= n
-					primes.delete m
-					m += i
-				end
-			end
-			i += 1
-		end
-		primes
-	end
+  def primes n
+    # See http://www.algorithmist.com/index.php/Prime_Sieve_of_Eratosthenes
+    primes = (2..n).to_a
+    i = 2
+    while i**2 <= n
+      if primes.include? i
+        m = i**2
+        while i**2 <= m and m <= n
+          primes.delete m
+          m += i
+        end
+      end
+      i += 1
+    end
+    primes
+  end
 
 end
