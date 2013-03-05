@@ -30,6 +30,18 @@ class Array
     nums.inject(:*)
   end
 
+  # Gets all numbers from the array and finds the one in the middle. If the
+  # array has an even number of numbers, the middle two numbers will be
+  # averaged. The middle of an array with no numbers is nil.
+  #
+  # @return [Numeric] the middle of the numbers in the array
+  def middle
+    nums = numerics
+    return nil if nums.empty?
+    middle_index = nums.length / 2
+    nums.length.odd? ? nums[middle_index] : [nums[middle_index-1], nums[middle_index]].mean
+  end
+
   # Gets the range of the numbers in the array (maximum - minimum). The range of
   # an array with no numbers is nil.
   #
@@ -50,20 +62,15 @@ class Array
     nums.sum.to_f / nums.size
   end
 
-  # Gets the median of the numbers in the array (the value in the middle of a
-  # sorted version of the array, numbers only). If the array has an even number
-  # of numbers, the middle two numbers will be averaged. The median of an array
-  # with no numbers is nil.
+  # Gets all numbers from the array, sorts them, and finds the one in the
+  # middle. The exact same functionality can be achieved by sorting an array and
+  # then running the middle method on it.
+  #
+  # @see middle
   #
   # @return [Numeric] the median of the numbers in the array
   def median
-    sorted = numerics.sort
-    return nil if sorted.empty?
-    if sorted.length.odd?
-      sorted[sorted.length/2]
-    else
-      (sorted[sorted.length/2-1] + sorted[sorted.length/2]) / 2.0
-    end
+    numerics.sort.middle
   end
 
   # Gets the mode(s) of the items in the array (the item(s) that occur(s) most
