@@ -26,6 +26,15 @@ describe Array do
     [5, 7, 2].product.should == 70
   end
 
+  it 'should calculate its middle' do
+    [].middle.should == nil
+    [4].middle.should == 4.0
+    ['string', 4].middle.should == 4.0
+    [2, 1, 5, 4, 3].middle.should == 5.0
+    [1, 2, 3, 4].middle.should == 2.5
+    [1, 2, 4, 3].middle.should == 3.0
+  end
+
   it 'should calculate its range' do
     [].range.should == nil
     ['string'].range.should == nil
