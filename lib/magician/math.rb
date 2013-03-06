@@ -118,8 +118,16 @@ module Math
     terms
   end
 
+  # Finds all prime numbers from 1 to a given number n (inclusive) using the
+  # Sieve of Eratosthenes.
+  #
+  # @see http://www.algorithmist.com/index.php/Prime_Sieve_of_Eratosthenes
+  #
+  # @param [Integer] n the upper limit of all primes to find (inclusive)
+  #
+  # @return [Array] an array of integers containing all discovered primes (in
+  # increasing order)
   def primes n
-    # See http://www.algorithmist.com/index.php/Prime_Sieve_of_Eratosthenes
     primes = (2..n).to_a
     i = 2
     while i**2 <= n
