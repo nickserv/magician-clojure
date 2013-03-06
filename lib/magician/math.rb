@@ -128,21 +128,24 @@ module Math
   # @return [Array] an array of integers containing all discovered primes (in
   # increasing order)
   def primes limit
-    is_prime = []
+    # Initialize the array of booleans
+    is_prime = [true] * (limit+1)
+    is_prime[0] = false
     is_prime[1] = false
-    (limit-1).times { is_prime << true }
 
-    check_limit = Math.sqrt(limit).to_i
-    2.upto(check_limit).each do |i|
+    # Check for composite numbers and update the array with results
+    2.upto(Math.sqrt limit).each do |i|
       if is_prime[i]
+        # Mark all multiples of i as composite
         2.upto(limit).each do |factor|
-          j = i * factor
-          break if j > limit
-          is_prime[j] = false
+          multiple = i * factor
+          break if multiple > limit
+          is_prime[multiple] = false
         end
       end
     end
 
+    # Create an array of prime integers by iterating over the array of booleans
     primes = []
     1.upto(limit).each { |i| primes << i if is_prime[i] }
     primes
