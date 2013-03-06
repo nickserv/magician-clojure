@@ -127,19 +127,24 @@ module Math
   #
   # @return [Array] an array of integers containing all discovered primes (in
   # increasing order)
-  def primes n
-    primes = (2..n).to_a
-    i = 2
-    while i**2 <= n
-      if primes.include? i
-        multiple = i**2
-        while multiple <= n
-          primes.delete multiple
-          multiple += i
+  def primes limit
+    is_prime = []
+    is_prime[1] = false
+    (limit-1).times { is_prime << true }
+
+    check_limit = Math.sqrt(limit).to_i
+    2.upto(check_limit).each do |i|
+      if is_prime[i]
+        2.upto(limit).each do |factor|
+          j = i * factor
+          break if j > limit
+          is_prime[j] = false
         end
       end
-      i += 1
     end
+
+    primes = []
+    1.upto(limit).each { |i| primes << i if is_prime[i] }
     primes
   end
 
