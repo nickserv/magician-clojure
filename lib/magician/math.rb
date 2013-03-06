@@ -132,10 +132,10 @@ module Math
     i = 2
     while i**2 <= n
       if primes.include? i
-        m = i**2
-        while i**2 <= m and m <= n
-          primes.delete m
-          m += i
+        multiple = i**2
+        while multiple <= n
+          primes.delete multiple
+          multiple += i
         end
       end
       i += 1
