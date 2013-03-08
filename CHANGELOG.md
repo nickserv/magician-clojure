@@ -1,6 +1,11 @@
 ## 0.2.1
 - Fix an issue with Array#median giving inaccurate results (it wasn't sorting
   the list)
+- Ensure that everything works as expected on Ruby 2.0
+- Add Array#middle, an unsorted version of Array#median
+- Add Math.primes, which implements a fast prime sieve
+- Deprecate Numeric#digits
+- Add an alias for I
 
 ## 0.2.0
 - Create this changelog
