@@ -110,12 +110,9 @@ module Math
   # (ordered)
   def fibs length
     return nil if length < 0
-    terms = []
-    until terms.length == length do
-      at_beginning = [0,1].include? terms.length
-      terms << ( at_beginning ? 1 : terms[-2] + terms[-1] )
-    end
-    terms
+    terms = [1, 1]
+    terms << (terms[-2] + terms[-1]) while terms.length < length
+    terms.first length
   end
 
   # Finds all prime numbers from 1 to a given number n (inclusive) using the
