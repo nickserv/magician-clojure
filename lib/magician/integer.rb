@@ -48,7 +48,7 @@ class Integer
   #
   # @return [Boolean] true if the integer is pandigital
   def pandigital?
-    to_s.split(//).sort!.join.to_i == 123456789
+    to_s.split(//).sort.join == '123456789'
   end
 
 end
