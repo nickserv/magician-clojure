@@ -21,4 +21,22 @@ describe Numeric do
     12345.digits(4).should == 5
   end
 
+  it 'should convert angles to radians' do
+    0.to_radians.should == 0
+    90.to_radians.should == PI/2
+    180.to_radians.should == PI
+    270.to_radians.should == 3*PI/2
+    360.to_radians.should == 2*PI
+    -90.to_radians.should == -PI/2
+  end
+
+  it 'should convert angles to degrees' do
+    0.to_degrees.should == 0
+    (PI/2).to_degrees.should == 90
+    PI.to_degrees.should == 180
+    (3*PI/2).to_degrees.should == 270
+    (2*PI).to_degrees.should == 360
+    (-PI/2).to_degrees.should == -90
+  end
+
 end
