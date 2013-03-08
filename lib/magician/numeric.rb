@@ -28,10 +28,16 @@ class Numeric
     to_s[selection].to_i
   end
 
+  # Converts the number from degrees to radians and returns the result.
+  #
+  # @return [Numeric] the number in radians
   def to_radians
     self * Math::PI / 180
   end
 
+  # Converts the number from radians to degrees and returns the result.
+  #
+  # @return [Numeric] the number in degrees
   def to_degrees
     self * 180 / Math::PI
   end
