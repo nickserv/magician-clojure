@@ -110,28 +110,41 @@ module Math
   # (ordered)
   def fibs length
     return nil if length < 0
-    terms = []
-    until terms.length == length do
-      at_beginning = [0,1].include? terms.length
-      terms << ( at_beginning ? 1 : terms[-2] + terms[-1] )
-    end
-    terms
+    terms = [1, 1]
+    terms << (terms[-2] + terms[-1]) while terms.length < length
+    terms.first length
   end
 
-  def primes n
-    # See http://www.algorithmist.com/index.php/Prime_Sieve_of_Eratosthenes
-    primes = (2..n).to_a
-    i = 2
-    while i**2 <= n
-      if primes.include? i
-        m = i**2
-        while i**2 <= m and m <= n
-          primes.delete m
-          m += i
+  # Finds all prime numbers from 1 to a given number n (inclusive) using the
+  # Sieve of Eratosthenes.
+  #
+  # @see http://www.algorithmist.com/index.php/Prime_Sieve_of_Eratosthenes
+  #
+  # @param [Integer] limit the upper limit of all primes to find (inclusive)
+  #
+  # @return [Array] an array of integers containing all discovered primes (in
+  # increasing order)
+  def primes limit
+    # Initialize the array of booleans
+    is_prime = [true] * (limit+1)
+    is_prime[0] = false
+    is_prime[1] = false
+
+    # Check for composite numbers and update the array with results
+    2.upto(Math.sqrt limit).each do |i|
+      if is_prime[i]
+        # Mark all multiples of i as composite
+        2.upto(limit).each do |factor|
+          multiple = i * factor
+          break if multiple > limit
+          is_prime[multiple] = false
         end
       end
-      i += 1
     end
+
+    # Create an array of prime integers by iterating over the array of booleans
+    primes = []
+    1.upto(limit).each { |i| primes << i if is_prime[i] }
     primes
   end
 
