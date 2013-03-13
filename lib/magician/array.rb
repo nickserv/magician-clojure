@@ -59,7 +59,7 @@ class Array
   def mean
     nums = numerics
     return nil if nums.empty?
-    nums.sum.to_f / nums.size
+    nums.sum.to_f / nums.length
   end
 
   # Gets all numbers from the array, sorts them, and finds the one in the
