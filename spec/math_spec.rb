@@ -72,6 +72,8 @@ describe Math do
     Math.fibs(2).should == [1, 1]
     Math.fibs(5).should == [1, 1, 2, 3, 5]
     Math.fibs(10).should == [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+    Math.fibs(10, [5, 10]).should == [5, 10, 15, 25, 40, 65, 105, 170, 275, 445]
+    Math.fibs(1, [1, 2, 3]).should == [1]
   end
 
   it 'should find all prime numbers up to different integers' do
