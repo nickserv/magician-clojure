@@ -8,7 +8,7 @@ class Integer
   # @return [Array] an array of all of the factors of the current integer (in
   # order, including 1 and the integer itself)
   def factors
-    return nil if self == 0
+    raise ArgumentError, '0 has infinite factors, so the Array of its factors cannot be computed in finite time' if zero?
     return [1] if abs == 1
     factors = [1]
     2.upto((abs/2).to_i) do |i|
