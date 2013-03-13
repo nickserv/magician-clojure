@@ -1,11 +1,19 @@
-## 0.2.1
-- Fix an issue with Array#median giving inaccurate results (it wasn't sorting
-  the list)
+## 0.3.0
 - Ensure that everything works as expected on Ruby 2.0
 - Add Array#middle, an unsorted version of Array#median
 - Add Math.primes, which implements a fast prime sieve
-- Deprecate Numeric#digits
 - Add an alias for I
+- Fix several issues with Integer#pandigital?
+- Add Numeric#to_radians and Numeric#to_degrees for conversion
+- Update the changelog to include changes in previous version 0.2.1
+
+## 0.2.1
+- Fix an issue with Array#median giving inaccurate results (it wasn't sorting
+  the list)
+- Performance improvements
+- Add Integer#pandigital?
+- Deprecate Numeric#digits
+- Add a shortcut for the golden ratio
 
 ## 0.2.0
 - Create this changelog
