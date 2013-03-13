@@ -73,9 +73,9 @@ describe Math do
     Math.fibs(10).should == [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
     Math.fibs(10, [5, 10]).should == [5, 10, 15, 25, 40, 65, 105, 170, 275, 445]
     Math.fibs(1, [1, 2, 3]).should == [1]
-    expect { Math.fibs(-1).should == nil }.to raise_error ArgumentError
-    expect { Math.fibs(10, []).should == nil }.to raise_error ArgumentError
-    expect { Math.fibs(10, [9001]).should == nil }.to raise_error ArgumentError
+    expect { Math.fibs(-1) }.to raise_error ArgumentError
+    expect { Math.fibs(10, []) }.to raise_error ArgumentError
+    expect { Math.fibs(10, [9001]) }.to raise_error ArgumentError
   end
 
   it 'should find all prime numbers up to different integers' do
