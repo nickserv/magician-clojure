@@ -3,6 +3,9 @@
 - Add Array#middle, an unsorted version of Array#median
 - Add Math.primes, which implements a fast prime sieve
 - Add an alias for I
+- Fix several issues with Integer#pandigital?
+- Add Numeric#to_radians and Numeric#to_degrees for conversion
+- Update the changelog to include changes in previous version 0.2.1
 
 ## 0.2.1
 - Fix an issue with Array#median giving inaccurate results (it wasn't sorting
