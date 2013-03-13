@@ -109,7 +109,8 @@ module Math
   # @return [Array] a Fibonacci series of Integers with the specified length
   # (ordered)
   def fibs length, terms = [1, 1]
-    return nil if length < 0
+    raise ArgumentError, 'Length must be at least 0' if length < 0
+    raise ArgumentError, 'At least two terms must be given' if terms.length < 2
     terms << (terms[-2] + terms[-1]) while terms.length < length
     terms.first length
   end
