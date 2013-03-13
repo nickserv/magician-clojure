@@ -17,7 +17,7 @@ class Array
   def sum
     nums = numerics
     return 0 if nums.empty?
-    nums.inject(:+)
+    nums.reduce :+
   end
 
   # Gets the product of the numbers in the array. The product of an array with
@@ -27,7 +27,7 @@ class Array
   def product
     nums = numerics
     return 1 if nums.empty?
-    nums.inject(:*)
+    nums.reduce :*
   end
 
   # Gets all numbers from the array and finds the one in the middle. If the

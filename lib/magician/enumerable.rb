@@ -2,7 +2,7 @@
 module Enumerable
 
   def comprehend &block
-    block.nil? ? self : collect(&block).compact
+    block.nil? ? self : map(&block).compact
   end
 
 end

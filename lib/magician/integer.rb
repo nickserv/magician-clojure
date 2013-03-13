@@ -26,7 +26,7 @@ class Integer
   # @return [Integer] factorial of the integer
   def factorial
     return 1 if zero?
-    1.upto(self).inject(:*)
+    1.upto(self).reduce :*
   end
 
   # Returns true if the integer is prime (that is, if it is not divisible by any
