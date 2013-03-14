@@ -15,7 +15,6 @@ class Numeric
 
   # Performs to_s[selection].to_i on the number. Note that for floats, the
   # decimal counts as a digit within the string.
-  # TODO: Let this intelligently convert back to an Integer or Float.
   #
   # @param [Range] selection the selection/range to get from the number (you can
   # use anything that works with the [] syntax)
