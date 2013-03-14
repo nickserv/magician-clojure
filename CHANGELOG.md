@@ -5,6 +5,8 @@
 - Add an alias for I
 - Fix several issues with Integer#pandigital?
 - Add Numeric#to_radians and Numeric#to_degrees for conversion
+- Support making Math.fibs start with any set of two or more terms
+- Add boolean, coin, and die class/instance methods to the Random class
 - Update the changelog to include changes in previous version 0.2.1
 
 ## 0.2.1
