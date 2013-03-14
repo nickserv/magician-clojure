@@ -14,7 +14,7 @@ module Math
   #
   # @return [Array] a sorted array of two Floats, the two possible values for x
   def quadratic(a, b, c)
-    return nil if a.zero?
+    raise ArgumentError, 'a cannot be zero' if a.zero?
     left = -b
     right = Math.sqrt(b**2 - 4*a*c)
     bottom = 2*a
@@ -29,7 +29,9 @@ module Math
   #
   # @return [Integer] the number of permutations
   def permutations(n, k)
-    return nil if n < 0 or k < 0 or n < k
+    raise ArgumentError, 'n cannot be negative' if n < 0
+    raise ArgumentError, 'k cannot be negative' if k < 0
+    raise ArgumentError, 'n must be at least as large as k' if n < k
     n.factorial / (n-k).factorial
   end
 
@@ -41,7 +43,9 @@ module Math
   #
   # @return [Integer] the number of combinations
   def combinations(n, k)
-    return nil if n < 0 or k < 0 or n < k
+    raise ArgumentError, 'n cannot be negative' if n < 0
+    raise ArgumentError, 'k cannot be negative' if k < 0
+    raise ArgumentError, 'n must be at least as large as k' if n < k
     n.factorial / (k.factorial * (n-k).factorial)
   end
 
@@ -56,7 +60,7 @@ module Math
   # @return [Integer] the number of steps it takes to get from integer n to 1
   # using the Collatz conjecture (the depth)
   def collatz(n, depth=0)
-    return nil if n < 1
+    raise ArgumentError, 'n must be at least 1' if n < 1
     if n == 1
       depth
     elsif n % 2 == 0
@@ -77,9 +81,8 @@ module Math
   #
   # @return [Float] the length of the hypotenuse of the triangle
   def hypotenuse(a, b)
-    [a,b].each do |n|
-      return nil if n < 0
-    end
+    raise ArgumentError, 'a cannot be negative' if a < 0
+    raise ArgumentError, 'b cannot be negative' if b < 0
     Math.sqrt(a**2 + b**2)
   end
 

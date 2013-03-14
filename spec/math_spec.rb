@@ -6,7 +6,7 @@ describe Math do
     Math.quadratic(1, 2, 1).should == [-1.0, -1.0]
     Math.quadratic(1, 1, 0).should == [-1.0, 0.0]
     Math.quadratic(1, 0, 0).should == [0.0, 0.0]
-    Math.quadratic(0, 1, 2).should == nil
+    expect { Math.quadratic(0, 1, 2) }.to raise_error ArgumentError
     #Math.quadratic(1, 2, 3).should == 'change me'
     #Math.quadratic(-1, -2, -3).should == 'change me'
     #Math.quadratic(1, 1, 1).should == 'change me'
@@ -16,40 +16,40 @@ describe Math do
     Math.permutations(10, 5).should == 30_240
     Math.permutations(5, 5).should == 120
     Math.permutations(5, 0).should == 1
-    Math.permutations(0, 5).should == nil
     Math.permutations(0, 0).should == 1
-    Math.permutations(5, 10).should == nil
-    Math.permutations(-5, 5).should == nil
-    Math.permutations(5, -5).should == nil
-    Math.permutations(-5, -5).should == nil
+    expect { Math.permutations(0, 5) }.to raise_error ArgumentError
+    expect { Math.permutations(5, 10) }.to raise_error ArgumentError
+    expect { Math.permutations(-5, 5) }.to raise_error ArgumentError
+    expect { Math.permutations(5, -5) }.to raise_error ArgumentError
+    expect { Math.permutations(-5, -5) }.to raise_error ArgumentError
   end
 
   it 'should calculate combinations of n and k' do
     Math.combinations(10, 5).should == 252
-    Math.combinations(5, 10).should == nil
     Math.combinations(5, 5).should == 1
     Math.combinations(5, 0).should == 1
-    Math.combinations(0, 5).should == nil
     Math.combinations(0, 0).should == 1
-    Math.combinations(-5, 5).should == nil
-    Math.combinations(5, -5).should == nil
-    Math.combinations(-5, -5).should == nil
+    expect { Math.combinations(5, 10) }.to raise_error ArgumentError
+    expect { Math.combinations(0, 5) }.to raise_error ArgumentError
+    expect { Math.combinations(-5, 5) }.to raise_error ArgumentError
+    expect { Math.combinations(5, -5) }.to raise_error ArgumentError
+    expect { Math.combinations(-5, -5) }.to raise_error ArgumentError
   end
 
   it 'should calculate the number of steps to finish the Collatz conjecture' do
-    Math.collatz(-1).should == nil
-    Math.collatz(0).should == nil
     Math.collatz(1).should == 0
     Math.collatz(2).should == 1
     Math.collatz(7).should == 16
     Math.collatz(100).should == 25
+    expect { Math.collatz(-1) }.to raise_error ArgumentError
+    expect { Math.collatz(0) }.to raise_error ArgumentError
   end
 
   it 'should calculate the lengths of hypotenuses' do
     Math.hypotenuse(0, 0).should == 0
     Math.hypotenuse(Math.sqrt(5), 2).should == 3
     Math.hypotenuse(1, 1).should == Math.sqrt(2)
-    Math.hypotenuse(5, -5).should be_nil
+    expect { Math.hypotenuse(5, -5) }.to raise_error ArgumentError
   end
 
   it 'should determine if given numbers form Pythagorean triplets' do
