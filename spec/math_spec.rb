@@ -7,9 +7,6 @@ describe Math do
     Math.quadratic(1, 1, 0).should == [-1.0, 0.0]
     Math.quadratic(1, 0, 0).should == [0.0, 0.0]
     expect { Math.quadratic(0, 1, 2) }.to raise_error ArgumentError
-    #Math.quadratic(1, 2, 3).should == 'change me'
-    #Math.quadratic(-1, -2, -3).should == 'change me'
-    #Math.quadratic(1, 1, 1).should == 'change me'
   end
 
   it 'should calculate permutations of n and k' do
