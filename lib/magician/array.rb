@@ -1,76 +1,68 @@
 # Magician's extensions to the Array class.
 class Array
 
-  # Returns all numbers from the array, in order. This is done by choosing all
-  # objects from the array that are instances of Numeric or one of its
-  # subclasses.
+  # Gets the sum of the array elements. The sum of an empty array is 0. The
+  # array must only contain Numerics.
   #
-  # @return [Array] a new array containing only Numerics
-  def numerics
-    select { |item| item.class <= Numeric }
-  end
-
-  # Gets the sum of the numbers in the array. The sum of an array with no
-  # numbers is 0.
-  #
-  # @return [Numeric] the sum of the numbers in the array
+  # @return [Numeric] the sum of the elements of the array
   def sum
-    nums = numerics
-    return 0 if nums.empty?
-    nums.reduce :+
+    require_numerics
+    return 0 if empty?
+    reduce :+
   end
 
-  # Gets the product of the numbers in the array. The product of an array with
-  # no numbers is 1.
+  # Gets the product of the array elements. The product of an empty array is 1.
+  # The array must only contain Numerics.
   #
-  # @return [Numeric] the product of the numbers in the array
+  # @return [Numeric] the product of the elements of the array
   def product
-    nums = numerics
-    return 1 if nums.empty?
-    nums.reduce :*
+    require_numerics
+    return 1 if empty?
+    reduce :*
   end
 
-  # Gets all numbers from the array and finds the one in the middle. If the
-  # array has an even number of numbers, the middle two numbers will be
-  # averaged. The middle of an array with no numbers is nil.
+  # Finds the middle element of the array. If the array has an even number of
+  # elements, the middle two elements will be averaged. The middle of an empty
+  # array is nil. The array must only contain Numerics.
   #
-  # @return [Numeric] the middle of the numbers in the array
+  # @return [Numeric] the middle of the elements of the array
   def middle
-    nums = numerics
-    return nil if nums.empty?
-    middle_index = nums.length / 2
-    nums.length.odd? ? nums[middle_index] : [nums[middle_index-1], nums[middle_index]].mean
+    require_numerics
+    return nil if empty?
+    middle_index = length / 2
+    length.odd? ? self[middle_index] : [self[middle_index-1], self[middle_index]].mean
   end
 
-  # Gets the range of the numbers in the array (maximum - minimum). The range of
-  # an array with no numbers is nil.
+  # Gets the range of the elements of the array (maximum - minimum). The range
+  # of an empty array is nil. The array must only contain Numerics.
   #
-  # @return [Numeric] the range of the numbers in the array
+  # @return [Numeric] the range of the elements of the array
   def range
-    nums = numerics
-    return nil if nums.empty?
-    nums.max - nums.min
+    require_numerics
+    return nil if empty?
+    max - min
   end
 
-  # Gets the mean (average) of the numbers in the array. The mean of an array
-  # with no numbers is nil.
+  # Gets the mean (average) of the elements of the array. The mean of an empty
+  # array is nil. The array must only contain Numerics.
   #
-  # @return [Float] the mean (average) of the numbers in the array
+  # @return [Float] the mean (average) of the elements of the array
   def mean
-    nums = numerics
-    return nil if nums.empty?
-    nums.sum.to_f / nums.length
+    require_numerics
+    return nil if empty?
+    sum.to_f / length
   end
 
-  # Gets all numbers from the array, sorts them, and finds the one in the
-  # middle. The exact same functionality can be achieved by sorting an array and
-  # then running the middle method on it.
+  # Sorts the array and finds the element in the middle. The exact same
+  # functionality can be achieved by sorting the array and then running the
+  # middle method on it. The array must only contain Numerics.
   #
   # @see middle
   #
-  # @return [Numeric] the median of the numbers in the array
+  # @return [Numeric] the median of the elements of the array
   def median
-    numerics.sort.middle
+    require_numerics
+    sort.middle
   end
 
   # Gets the mode(s) of the items in the array (the item(s) that occur(s) most
@@ -100,5 +92,15 @@ class Array
 
   # Alias average to mean.
   alias :average :mean
+
+  private
+
+  # Requires that all objects in the Array are instances of Numeric (or one of
+  # its subclasses), and raises a RuntimeError if they are not.
+  def require_numerics
+    unless all? { |item| item.class <= Numeric }
+      raise RuntimeError, "Array##{caller[0][/`.*'/][1..-2]} requires that the Array only contains Numeric objects."
+    end
+  end
 
 end
