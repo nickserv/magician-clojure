@@ -35,7 +35,7 @@ class Array
   # array is nil. The array must only contain Numerics or a RuntimeError will be
   # raised.
   #
-  # @return [Numeric] the middle of the elements of the array
+  # @return [Numeric, nil] the middle of the elements of the array
   def middle
     require_numerics
     return nil if empty?
@@ -47,7 +47,7 @@ class Array
   # of an empty array is nil. The array must only contain Numerics or a
   # RuntimeError will be raised.
   #
-  # @return [Numeric] the range of the elements of the array
+  # @return [Numeric, nil] the range of the elements of the array
   def range
     require_numerics
     return nil if empty?
@@ -58,7 +58,7 @@ class Array
   # array is nil. The array must only contain Numerics or a RuntimeError will be
   # raised.
   #
-  # @return [Float] the mean (average) of the elements of the array
+  # @return [Float, nil] the mean (average) of the elements of the array
   def mean
     require_numerics
     return nil if empty?
@@ -72,7 +72,7 @@ class Array
   #
   # @see middle
   #
-  # @return [Numeric] the median of the elements of the array
+  # @return [Numeric, nil] the median of the elements of the array
   def median
     require_numerics
     sort.middle
@@ -81,8 +81,8 @@ class Array
   # Gets the mode(s) of the items in the array (the item(s) that occur(s) most
   # frequently). The mode of an empty array is nil.
   #
-  # @return [Array] an array of all of the items in the array that occur the
-  #   most frequently (they must all have the same number of occurrences)
+  # @return [Array, nil] an array of all of the items in the array that occur
+  #   the most frequently (they must all have the same number of occurrences)
   def mode
     return nil if empty?
     occ = occurences
