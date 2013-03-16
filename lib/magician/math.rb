@@ -51,15 +51,15 @@ module Math
   end
 
   # Get the number of steps it takes to get from integer n to 1 using the
-  # Collatz conjecture (set http://en.wikipedia.org/wiki/Collatz_conjecture).
+  # Collatz conjecture (see http://en.wikipedia.org/wiki/Collatz_conjecture).
   # Raises an ArgumentError if n < 1.
   #
   # @param [Integer] n the number to put into the Collatz conjecture initially
   # @param [Integer] depth the number of steps that have passed so far (should
-  # not be modified unless this is being cached carefully)
+  #   not be modified unless this is being cached carefully)
   #
   # @return [Integer] the number of steps it takes to get from integer n to 1
-  # using the Collatz conjecture (the depth)
+  #   using the Collatz conjecture (the depth)
   def collatz(n, depth=0)
     raise ArgumentError, 'n must be at least 1' if n < 1
     if n == 1
@@ -110,10 +110,10 @@ module Math
   # generating numbers with the terms [1, 1].
   #
   # @param [Integer] length the length of the Fibonacci series that should be
-  # returned
+  #   returned
   #
   # @return [Array] a Fibonacci series of Integers with the specified length
-  # (ordered)
+  #   (ordered)
   def fibs length, terms = [1, 1]
     raise ArgumentError, 'Length must be at least 0' if length < 0
     raise ArgumentError, 'At least two terms must be given' if terms.length < 2
@@ -129,7 +129,7 @@ module Math
   # @param [Integer] limit the upper limit of all primes to find (inclusive)
   #
   # @return [Array] an array of integers containing all discovered primes (in
-  # increasing order)
+  #   increasing order)
   def primes limit
     # Initialize the array of booleans
     is_prime = [true] * (limit+1)

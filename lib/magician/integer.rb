@@ -7,7 +7,7 @@ class Integer
   # 0, since 0 has infinite factors.
   #
   # @return [Array] an array of all of the factors of the current integer (in
-  # order, including 1 and the integer itself)
+  #   order, including 1 and the integer itself)
   def factors
     raise ArgumentError, '0 has infinite factors, so the Array of its factors cannot be computed in finite time' if zero?
     return [1] if abs == 1

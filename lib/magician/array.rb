@@ -82,7 +82,7 @@ class Array
   # frequently). The mode of an empty array is nil.
   #
   # @return [Array] an array of all of the items in the array that occur the
-  # most frequently (they must all have the same number of occurrences)
+  #   most frequently (they must all have the same number of occurrences)
   def mode
     return nil if empty?
     occ = occurences
@@ -96,7 +96,7 @@ class Array
   # values.
   #
   # @return [Hash] a hash table of the occurrences of each item from the original
-  # array
+  #   array
   def occurences
     occurences = Hash.new 0
     each { |item| occurences[item] += 1 }
