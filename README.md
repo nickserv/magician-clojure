@@ -50,4 +50,4 @@ For detailed documentation, see
   isolate to its own commit so I can cherry-pick around it.
 
 ## Copyright
-Copyright (c) 2012 Nicolas McCurdy. See LICENSE.txt for further details.
+Copyright (c) 2013 Nicolas McCurdy. See LICENSE.txt for further details.
