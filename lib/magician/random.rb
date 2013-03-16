@@ -11,14 +11,14 @@ class Random
   #
   # @return [Boolean] true or false
   def boolean
-    [true, false].sample
+    [true, false].sample random: self
   end
 
   # Returns a random coin toss (heads or tails).
   #
   # @return [String] 'heads' or 'tails'
   def coin
-    ['heads', 'tails'].sample
+    ['heads', 'tails'].sample random: self
   end
 
   # Returns a random die roll (from 1-6).
