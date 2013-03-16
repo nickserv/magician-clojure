@@ -14,6 +14,8 @@ class Array
   # array must only contain Numerics or a RuntimeError will be raised.
   #
   # @return [Numeric] the sum of the elements of the array
+  #
+  # @raise [RuntimeError] if the Array contains non-Numeric objects
   def sum
     require_numerics
     return 0 if empty?
@@ -24,6 +26,8 @@ class Array
   # The array must only contain Numerics or a RuntimeError will be raised.
   #
   # @return [Numeric] the product of the elements of the array
+  #
+  # @raise [RuntimeError] if the Array contains non-Numeric objects
   def product
     require_numerics
     return 1 if empty?
@@ -36,6 +40,8 @@ class Array
   # raised.
   #
   # @return [Numeric, nil] the middle of the elements of the array
+  #
+  # @raise [RuntimeError] if the Array contains non-Numeric objects
   def middle
     require_numerics
     return nil if empty?
@@ -48,6 +54,8 @@ class Array
   # RuntimeError will be raised.
   #
   # @return [Numeric, nil] the range of the elements of the array
+  #
+  # @raise [RuntimeError] if the Array contains non-Numeric objects
   def range
     require_numerics
     return nil if empty?
@@ -59,6 +67,8 @@ class Array
   # raised.
   #
   # @return [Float, nil] the mean (average) of the elements of the array
+  #
+  # @raise [RuntimeError] if the Array contains non-Numeric objects
   def mean
     require_numerics
     return nil if empty?
@@ -73,6 +83,8 @@ class Array
   # @see middle
   #
   # @return [Numeric, nil] the median of the elements of the array
+  #
+  # @raise [RuntimeError] if the Array contains non-Numeric objects
   def median
     require_numerics
     sort.middle
@@ -109,7 +121,9 @@ class Array
   private
 
   # Requires that all objects in the Array are instances of Numeric (or one of
-  # its subclasses), and raises a RuntimeError if they are not.
+  # its subclasses), and raises an error if they are not.
+  #
+  # @raise [RuntimeError] if the Array contains non-Numeric objects
   def require_numerics
     unless all? { |item| item.class <= Numeric }
       raise RuntimeError, "Array##{caller[0][/`.*'/][1..-2]} requires that the Array only contains Numeric objects."

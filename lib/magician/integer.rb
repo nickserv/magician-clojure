@@ -3,11 +3,12 @@ class Integer
 
   # Gets all of the factors of the current integer. If the current integer is
   # negative, it will be treated as if it were positive (so the results will
-  # never contain negative integers). Raises an ArgumentError if the integer is
-  # 0, since 0 has infinite factors.
+  # never contain negative integers).
   #
   # @return [Array] an array of all of the factors of the current integer (in
   #   order, including 1 and the integer itself)
+  #
+  # @raise [ArgumentError] if the integer is 0, since 0 has infinite factors
   def factors
     raise ArgumentError, '0 has infinite factors, so the Array of its factors cannot be computed in finite time' if zero?
     return [1] if abs == 1

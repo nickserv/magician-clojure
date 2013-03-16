@@ -6,14 +6,16 @@ module Math
 
   # Solves a quadratic formula of the form "ax^2+bx+c=0" for x, where a is not
   # 0. It asks for the three coefficients of the function (a, b, and c), and
-  # returns the two possible values for x. Raises an ArgumentError if a is 0.
-  # Complex number results are not supported yet.
+  # returns the two possible values for x. Complex number results are not
+  # supported yet.
   #
   # @param [Numeric] a the first coefficient (must not be 0)
   # @param [Numeric] b the second coefficient
   # @param [Numeric] c the third coefficient
   #
   # @return [Array] a sorted array of two Floats, the two possible values for x
+  #
+  # @raise [ArgumentError] if a is 0
   def quadratic(a, b, c)
     raise ArgumentError, 'a cannot be zero' if a.zero?
     left = -b
@@ -23,12 +25,14 @@ module Math
   end
 
   # The number of size k ordered subsets of a set of size n. Equivalent to
-  # n!/(n-k)!. Raises an ArgumentError if either is negative, or if n < k.
+  # n!/(n-k)!.
   #
   # @param [Integer] n the size of the set to pick from
   # @param [Integer] k the size of the ordered subsets
   #
   # @return [Integer] the number of permutations
+  #
+  # @raise [ArgumentError] if either argument is negative, or if n < k
   def permutations(n, k)
     raise ArgumentError, 'n cannot be negative' if n < 0
     raise ArgumentError, 'k cannot be negative' if k < 0
@@ -37,12 +41,14 @@ module Math
   end
 
   # The number of size k unordered subsets of a set of size n. Equivalent to
-  # n!/(k!(n-k)!). Raises an ArgumentError if either is negative, or if n < k.
+  # n!/(k!(n-k)!).
   #
   # @param [Integer] n the size of the set to pick from
   # @param [Integer] k the size of the unordered subsets
   #
   # @return [Integer] the number of combinations
+  #
+  # @raise [ArgumentError] if either argument is negative, or if n < k
   def combinations(n, k)
     raise ArgumentError, 'n cannot be negative' if n < 0
     raise ArgumentError, 'k cannot be negative' if k < 0
@@ -60,6 +66,8 @@ module Math
   #
   # @return [Integer] the number of steps it takes to get from integer n to 1
   #   using the Collatz conjecture (the depth)
+  #
+  # @raise [ArgumentError] if n < 1
   def collatz(n, depth=0)
     raise ArgumentError, 'n must be at least 1' if n < 1
     if n == 1
@@ -74,13 +82,14 @@ module Math
   end
 
   # Using the Pythagorean theorem, gets c (the length of the hypotenuse) when a
-  # and b (the lengths of the other sides of a triangle) are given. Raises an
-  # ArgumentError if either a or b is negative.
+  # and b (the lengths of the other sides of a triangle) are given.
   #
   # @param [Numeric] a the length of the first side of the triangle
   # @param [Numeric] b the length of the second side of the triangle
   #
   # @return [Float] the length of the hypotenuse of the triangle
+  #
+  # @raise [ArgumentError] if either argument is negative
   def hypotenuse(a, b)
     raise ArgumentError, 'a cannot be negative' if a < 0
     raise ArgumentError, 'b cannot be negative' if b < 0
@@ -104,16 +113,18 @@ module Math
     a**2 + b**2 == c**2
   end
 
-  # Calculates a series of Fibonacci numbers of a specified length. Raises an
-  # ArgumentError if a negative length is given, or if less than two terms are
-  # given. Note that if terms are not passed to this method, it will start
-  # generating numbers with the terms [1, 1].
+  # Calculates a series of Fibonacci numbers of a specified length. Note that
+  # if terms are not passed to this method, it will start generating numbers
+  # with the terms [1, 1].
   #
   # @param [Integer] length the length of the Fibonacci series that should be
   #   returned
   #
   # @return [Array] a Fibonacci series of Integers with the specified length
   #   (ordered)
+  #
+  # @raise [ArgumentError] if a negative length is given, or if less than two
+  #   terms are given
   def fibs length, terms = [1, 1]
     raise ArgumentError, 'Length must be at least 0' if length < 0
     raise ArgumentError, 'At least two terms must be given' if terms.length < 2
