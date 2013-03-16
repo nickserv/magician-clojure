@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 describe Integer do
 
   it 'should calculate its factors' do
-    0.factors.should == nil
+    expect { 0.factors }.to raise_error ArgumentError
     1.factors.should == [1]
     6.factors.should == [1, 2, 3, 6]
     7.factors.should == [1, 7]
