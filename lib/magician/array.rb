@@ -11,7 +11,7 @@ class Array
   end
 
   # Gets the sum of the array elements. The sum of an empty array is 0. The
-  # array must only contain Numerics.
+  # array must only contain Numerics or a RuntimeError will be raised.
   #
   # @return [Numeric] the sum of the elements of the array
   def sum
@@ -21,7 +21,7 @@ class Array
   end
 
   # Gets the product of the array elements. The product of an empty array is 1.
-  # The array must only contain Numerics.
+  # The array must only contain Numerics or a RuntimeError will be raised.
   #
   # @return [Numeric] the product of the elements of the array
   def product
@@ -32,7 +32,8 @@ class Array
 
   # Finds the middle element of the array. If the array has an even number of
   # elements, the middle two elements will be averaged. The middle of an empty
-  # array is nil. The array must only contain Numerics.
+  # array is nil. The array must only contain Numerics or a RuntimeError will be
+  # raised.
   #
   # @return [Numeric] the middle of the elements of the array
   def middle
@@ -43,7 +44,8 @@ class Array
   end
 
   # Gets the range of the elements of the array (maximum - minimum). The range
-  # of an empty array is nil. The array must only contain Numerics.
+  # of an empty array is nil. The array must only contain Numerics or a
+  # RuntimeError will be raised.
   #
   # @return [Numeric] the range of the elements of the array
   def range
@@ -53,7 +55,8 @@ class Array
   end
 
   # Gets the mean (average) of the elements of the array. The mean of an empty
-  # array is nil. The array must only contain Numerics.
+  # array is nil. The array must only contain Numerics or a RuntimeError will be
+  # raised.
   #
   # @return [Float] the mean (average) of the elements of the array
   def mean
@@ -64,7 +67,8 @@ class Array
 
   # Sorts the array and finds the element in the middle. The exact same
   # functionality can be achieved by sorting the array and then running the
-  # middle method on it. The array must only contain Numerics.
+  # middle method on it. The array must only contain Numerics or a RuntimeError
+  # will be raised.
   #
   # @see middle
   #

@@ -6,8 +6,8 @@ module Math
 
   # Solves a quadratic formula of the form "ax^2+bx+c=0" for x, where a is not
   # 0. It asks for the three coefficients of the function (a, b, and c), and
-  # returns the two possible values for x. Returns nil if a is 0. Complex number
-  # results are not supported yet.
+  # returns the two possible values for x. Raises an ArgumentError if a is 0.
+  # Complex number results are not supported yet.
   #
   # @param [Numeric] a the first coefficient (must not be 0)
   # @param [Numeric] b the second coefficient
@@ -23,7 +23,7 @@ module Math
   end
 
   # The number of size k ordered subsets of a set of size n. Equivalent to
-  # n!/(n-k)!. Returns nil if either is negative, or if n < k.
+  # n!/(n-k)!. Raises an ArgumentError if either is negative, or if n < k.
   #
   # @param [Integer] n the size of the set to pick from
   # @param [Integer] k the size of the ordered subsets
@@ -37,7 +37,7 @@ module Math
   end
 
   # The number of size k unordered subsets of a set of size n. Equivalent to
-  # n!/(k!(n-k)!). Returns nil if either is negative, or if n < k.
+  # n!/(k!(n-k)!). Raises an ArgumentError if either is negative, or if n < k.
   #
   # @param [Integer] n the size of the set to pick from
   # @param [Integer] k the size of the unordered subsets
@@ -52,7 +52,7 @@ module Math
 
   # Get the number of steps it takes to get from integer n to 1 using the
   # Collatz conjecture (set http://en.wikipedia.org/wiki/Collatz_conjecture).
-  # Returns nil if n < 1.
+  # Raises an ArgumentError if n < 1.
   #
   # @param [Integer] n the number to put into the Collatz conjecture initially
   # @param [Integer] depth the number of steps that have passed so far (should
@@ -74,8 +74,8 @@ module Math
   end
 
   # Using the Pythagorean theorem, gets c (the length of the hypotenuse) when a
-  # and b (the lengths of the other sides of a triangle) are given. Returns nil
-  # if either a or b is negative.
+  # and b (the lengths of the other sides of a triangle) are given. Raises an
+  # ArgumentError if either a or b is negative.
   #
   # @param [Numeric] a the length of the first side of the triangle
   # @param [Numeric] b the length of the second side of the triangle
@@ -104,8 +104,10 @@ module Math
     a**2 + b**2 == c**2
   end
 
-  # Calculates a series of Fibonacci numbers of a specified length. Returns nil
-  # if a negative length is given.
+  # Calculates a series of Fibonacci numbers of a specified length. Raises an
+  # ArgumentError if a negative length is given, or if less than two terms are
+  # given. Note that if terms are not passed to this method, it will start
+  # generating numbers with the terms [1, 1].
   #
   # @param [Integer] length the length of the Fibonacci series that should be
   # returned
