@@ -57,8 +57,9 @@ module Math
   end
 
   # Get the number of steps it takes to get from integer n to 1 using the
-  # Collatz conjecture (see http://en.wikipedia.org/wiki/Collatz_conjecture).
-  # Raises an ArgumentError if n < 1.
+  # Collatz conjecture.
+  #
+  # @see http://en.wikipedia.org/wiki/Collatz_conjecture
   #
   # @param [Integer] n the number to put into the Collatz conjecture initially
   # @param [Integer] depth the number of steps that have passed so far (should
