@@ -15,10 +15,10 @@ describe Integer do
   end
 
   it 'should calculate its factorial' do
-    0.factorial.should == 1
-    1.factorial.should == 1
+    0.factorial.should  == 1
+    1.factorial.should  == 1
     -1.factorial.should == nil
-    5.factorial.should == 120
+    5.factorial.should  == 120
     10.factorial.should == 3_628_800
   end
 
@@ -40,9 +40,9 @@ describe Integer do
     987654321.pandigital?.should be_true
     192837465.pandigital?.should be_true
 
-    12345.pandigital?.should be_false
-    1234567890.pandigital?.should be_false
-    1234567899.pandigital?.should be_false
+    12345.pandigital?.should              be_false
+    1234567890.pandigital?.should         be_false
+    1234567899.pandigital?.should         be_false
     112233445566778899.pandigital?.should be_false
   end
 
