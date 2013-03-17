@@ -7,6 +7,7 @@ describe String do
     'a'.palindrome?.should be_true
     'deed'.palindrome?.should be_true
     'racecar'.palindrome?.should be_true
+
     'cats'.palindrome?.should be_false
     'no'.palindrome?.should be_false
   end

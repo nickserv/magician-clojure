@@ -6,6 +6,7 @@ describe Math do
     Math.quadratic(1, 2, 1).should == [-1.0, -1.0]
     Math.quadratic(1, 1, 0).should == [-1.0, 0.0]
     Math.quadratic(1, 0, 0).should == [0.0, 0.0]
+
     expect { Math.quadratic(0, 1, 2) }.to raise_error ArgumentError
   end
 
@@ -14,6 +15,7 @@ describe Math do
     Math.permutations(5, 5).should == 120
     Math.permutations(5, 0).should == 1
     Math.permutations(0, 0).should == 1
+
     expect { Math.permutations(0, 5) }.to raise_error ArgumentError
     expect { Math.permutations(5, 10) }.to raise_error ArgumentError
     expect { Math.permutations(-5, 5) }.to raise_error ArgumentError
@@ -26,6 +28,7 @@ describe Math do
     Math.combinations(5, 5).should == 1
     Math.combinations(5, 0).should == 1
     Math.combinations(0, 0).should == 1
+
     expect { Math.combinations(5, 10) }.to raise_error ArgumentError
     expect { Math.combinations(0, 5) }.to raise_error ArgumentError
     expect { Math.combinations(-5, 5) }.to raise_error ArgumentError
@@ -38,6 +41,7 @@ describe Math do
     Math.collatz(2).should == 1
     Math.collatz(7).should == 16
     Math.collatz(100).should == 25
+
     expect { Math.collatz(-1) }.to raise_error ArgumentError
     expect { Math.collatz(0) }.to raise_error ArgumentError
   end
@@ -46,6 +50,7 @@ describe Math do
     Math.hypotenuse(0, 0).should == 0
     Math.hypotenuse(Math.sqrt(5), 2).should == 3
     Math.hypotenuse(1, 1).should == Math.sqrt(2)
+
     expect { Math.hypotenuse(5, -5) }.to raise_error ArgumentError
   end
 
@@ -55,6 +60,7 @@ describe Math do
     Math.triplet?(7, 24, 25).should be_true
     Math.triplet?(8, 15, 17).should be_true
     Math.triplet?(4, 3, 5).should be_true
+
     Math.triplet?(5, 4, 3).should be_false
     Math.triplet?(0, 0, 0).should be_false
     Math.triplet?(Math.sqrt(5), 2, 3).should be_false
@@ -68,8 +74,10 @@ describe Math do
     Math.fibs(2).should == [1, 1]
     Math.fibs(5).should == [1, 1, 2, 3, 5]
     Math.fibs(10).should == [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+
     Math.fibs(10, [5, 10]).should == [5, 10, 15, 25, 40, 65, 105, 170, 275, 445]
     Math.fibs(1, [1, 2, 3]).should == [1]
+
     expect { Math.fibs(-1) }.to raise_error ArgumentError
     expect { Math.fibs(10, []) }.to raise_error ArgumentError
     expect { Math.fibs(10, [9001]) }.to raise_error ArgumentError
