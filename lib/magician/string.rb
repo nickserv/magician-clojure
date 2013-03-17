@@ -6,7 +6,7 @@ class String
   #
   # @return [Boolean] true if the string is a palindrome
   def palindrome?
-    self == reverse
+    eql? reverse
   end
 
 end

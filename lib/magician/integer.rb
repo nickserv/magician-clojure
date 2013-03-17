@@ -12,15 +12,7 @@ class Integer
   def factors
     raise ArgumentError, '0 has infinite factors, so the Array of its factors cannot be computed in finite time' if zero?
 
-    return [1] if abs == 1
-
-    factors = [1]
-    2.upto((abs/2).to_i) do |i|
-      if abs%i == 0
-        factors << i
-      end
-    end
-    factors << abs
+    1.upto(abs/2).select { |i| abs % i == 0 } << abs
   end
 
   # Gets the factorial of the integer, which is equivalent to the product of all
@@ -31,7 +23,7 @@ class Integer
   def factorial
     return 1 if zero?
 
-    1.upto(self).reduce :*
+    downto(1).reduce :*
   end
 
   # Returns true if the integer is prime (that is, if it is not divisible by any
@@ -43,10 +35,7 @@ class Integer
   def prime?
     return false if self <= 1
 
-    (2..Math.sqrt(self)).each do |i|
-      return false if self % i == 0
-    end
-    true
+    not 2.upto(Math.sqrt self).any? { |i| modulo(i) == 0 }
   end
 
   # Returns true if the integer is pandigital. That is, the integer contains

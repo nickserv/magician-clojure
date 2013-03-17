@@ -9,8 +9,7 @@ class Numeric
   #
   # @return [Boolean] true if the number is evenly divisible by n
   def divisible? n
-    return false if n.zero?
-    (self % n).zero?
+    n.zero? ? false : modulo(n).zero?
   end
 
   # Performs to_s[selection].to_i on the number. Note that for floats, the

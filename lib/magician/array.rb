@@ -19,8 +19,7 @@ class Array
   def sum
     require_numerics
 
-    return 0 if empty?
-    reduce :+
+    empty? ? 0 : reduce(:+)
   end
 
   # Gets the product of the array elements. The product of an empty array is 1.
@@ -32,8 +31,7 @@ class Array
   def product
     require_numerics
 
-    return 1 if empty?
-    reduce :*
+    empty? ? 1 : reduce(:*)
   end
 
   # Finds the middle element of the array. If the array has an even number of
@@ -49,7 +47,7 @@ class Array
     return nil if empty?
 
     middle_index = length / 2
-    length.odd? ? self[middle_index] : [self[middle_index-1], self[middle_index]].mean
+    length.odd? ? slice(middle_index) : [slice(middle_index-1), slice(middle_index)].mean
   end
 
   # Gets the range of the elements of the array (maximum - minimum). The range
@@ -62,8 +60,7 @@ class Array
   def range
     require_numerics
 
-    return nil if empty?
-    max - min
+    empty? ? nil : max - min
   end
 
   # Gets the mean (average) of the elements of the array. The mean of an empty
@@ -76,8 +73,7 @@ class Array
   def mean
     require_numerics
 
-    return nil if empty?
-    sum.to_f / length
+    empty? ? nil : sum.to_f / length
   end
 
   # Sorts the array and finds the element in the middle. The exact same
@@ -134,7 +130,8 @@ class Array
   # @raise [RuntimeError] if the Array contains non-Numeric objects
   def require_numerics
     unless all? { |item| item.class <= Numeric }
-      raise RuntimeError, "Array##{caller[0][/`.*'/][1..-2]} requires that the Array only contains Numeric objects."
+      calling_method = caller[0][/`.*'/][1..-2]
+      raise RuntimeError, "Array##{calling_method} requires that the Array only contains Numeric objects."
     end
   end
 

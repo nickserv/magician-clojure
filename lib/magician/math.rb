@@ -112,11 +112,7 @@ module Math
   #
   # @return [Boolean] true if the three numbers form a Pythagorean triplet
   def triplet?(a, b, c)
-    inputs_are_valid = true
-    [a,b,c].each do |n|
-      inputs_are_valid = false if n < 1 or not n.class <= Integer
-    end
-    return false unless inputs_are_valid
+    return false if [a, b, c].any? { |n| n < 1 or not n.class <= Integer }
 
     a**2 + b**2 == c**2
   end
@@ -170,9 +166,7 @@ module Math
     end
 
     # Create an array of prime integers by iterating over the array of booleans
-    primes = []
-    1.upto(limit).each { |i| primes << i if is_prime[i] }
-    primes
+    1.upto(limit).reduce [] { |primes, i| is_prime[i] ? primes << i : primes }
   end
 
 end
