@@ -18,6 +18,7 @@ class Array
   # @raise [RuntimeError] if the Array contains non-Numeric objects
   def sum
     require_numerics
+
     return 0 if empty?
     reduce :+
   end
@@ -30,6 +31,7 @@ class Array
   # @raise [RuntimeError] if the Array contains non-Numeric objects
   def product
     require_numerics
+
     return 1 if empty?
     reduce :*
   end
@@ -45,6 +47,7 @@ class Array
   def middle
     require_numerics
     return nil if empty?
+
     middle_index = length / 2
     length.odd? ? self[middle_index] : [self[middle_index-1], self[middle_index]].mean
   end
@@ -58,6 +61,7 @@ class Array
   # @raise [RuntimeError] if the Array contains non-Numeric objects
   def range
     require_numerics
+
     return nil if empty?
     max - min
   end
@@ -71,6 +75,7 @@ class Array
   # @raise [RuntimeError] if the Array contains non-Numeric objects
   def mean
     require_numerics
+
     return nil if empty?
     sum.to_f / length
   end
@@ -87,6 +92,7 @@ class Array
   # @raise [RuntimeError] if the Array contains non-Numeric objects
   def median
     require_numerics
+
     sort.middle
   end
 
@@ -97,8 +103,10 @@ class Array
   #   the most frequently (they must all have the same number of occurrences)
   def mode
     return nil if empty?
+
     occ = occurences
     max_occ = occ.values.max
+
     occ.select { |key, value| value == max_occ }.keys
   end
 

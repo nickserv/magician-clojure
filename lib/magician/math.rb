@@ -18,9 +18,11 @@ module Math
   # @raise [ArgumentError] if a is 0
   def quadratic(a, b, c)
     raise ArgumentError, 'a cannot be zero' if a.zero?
+
     left = -b
     right = Math.sqrt(b**2 - 4*a*c)
     bottom = 2*a
+
     [ (left+right)/bottom, (left-right)/bottom ].sort
   end
 
@@ -37,6 +39,7 @@ module Math
     raise ArgumentError, 'n cannot be negative' if n < 0
     raise ArgumentError, 'k cannot be negative' if k < 0
     raise ArgumentError, 'n must be at least as large as k' if n < k
+
     n.factorial / (n-k).factorial
   end
 
@@ -53,6 +56,7 @@ module Math
     raise ArgumentError, 'n cannot be negative' if n < 0
     raise ArgumentError, 'k cannot be negative' if k < 0
     raise ArgumentError, 'n must be at least as large as k' if n < k
+
     n.factorial / (k.factorial * (n-k).factorial)
   end
 
@@ -71,6 +75,7 @@ module Math
   # @raise [ArgumentError] if n < 1
   def collatz(n, depth=0)
     raise ArgumentError, 'n must be at least 1' if n < 1
+
     if n == 1
       depth
     elsif n % 2 == 0
@@ -94,6 +99,7 @@ module Math
   def hypotenuse(a, b)
     raise ArgumentError, 'a cannot be negative' if a < 0
     raise ArgumentError, 'b cannot be negative' if b < 0
+
     Math.sqrt(a**2 + b**2)
   end
 
@@ -111,6 +117,7 @@ module Math
       inputs_are_valid = false if n < 1 or not n.class <= Integer
     end
     return false unless inputs_are_valid
+
     a**2 + b**2 == c**2
   end
 
@@ -129,7 +136,9 @@ module Math
   def fibs length, terms = [1, 1]
     raise ArgumentError, 'Length must be at least 0' if length < 0
     raise ArgumentError, 'At least two terms must be given' if terms.length < 2
+
     terms << (terms[-2] + terms[-1]) while terms.length < length
+
     terms.first length
   end
 

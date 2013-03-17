@@ -11,7 +11,9 @@ class Integer
   # @raise [ArgumentError] if the integer is 0, since 0 has infinite factors
   def factors
     raise ArgumentError, '0 has infinite factors, so the Array of its factors cannot be computed in finite time' if zero?
+
     return [1] if abs == 1
+
     factors = [1]
     2.upto((abs/2).to_i) do |i|
       if abs%i == 0
@@ -28,6 +30,7 @@ class Integer
   # @return [Integer] factorial of the integer
   def factorial
     return 1 if zero?
+
     1.upto(self).reduce :*
   end
 
@@ -39,6 +42,7 @@ class Integer
   # @return [Boolean] true if the integer is prime
   def prime?
     return false if self <= 1
+
     (2..Math.sqrt(self)).each do |i|
       return false if self % i == 0
     end
