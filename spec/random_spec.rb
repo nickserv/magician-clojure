@@ -3,25 +3,19 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 describe Random do
 
   before :each do
-    @r = Random.new 1234
+    @r = Random.new
   end
 
   it 'should get a random boolean' do
-    @r.boolean.should be_true
-    @r.boolean.should be_false
-    @r.boolean.should be_true
+    5.times { [true, false].should include @r.boolean }
   end
 
   it 'should get a random coin toss' do
-    @r.coin.should == 'heads'
-    @r.coin.should == 'tails'
-    @r.coin.should == 'heads'
+    5.times { ['heads', 'tails'].should include @r.coin }
   end
 
   it 'should get a random die roll' do
-    @r.die.should == 4
-    @r.die.should == 6
-    @r.die.should == 5
+    5.times { (1..6).should include @r.die }
   end
 
 end
