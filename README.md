@@ -2,8 +2,7 @@
 
 A suite of handy methods for doing calculations in irb.
 
-For detailed documentation, see
-[magician on RubyDoc.info](http://rubydoc.info/github/thenickperson/magician/frames).
+## [Documentation](http://rubydoc.info/github/thenickperson/magician/frames)
 
 ## A note on Ruby 2.0
 With the latest release of magician, all tests pass on Ruby 1.9 and 2.0.
