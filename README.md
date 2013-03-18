@@ -5,6 +5,13 @@ A suite of handy methods for doing calculations in irb.
 For detailed documentation, see
 [magician on RubyDoc.info](http://rubydoc.info/github/thenickperson/magician/frames).
 
+## A note on Ruby 2.0
+With the latest release of magician, all tests pass on Ruby 1.9 and 2.0.
+However, magician depends on jeweler to work, which unfortunately does not seem
+to be compatible with Ruby 2.0 yet. As a result, magician will most likely not
+work on Ruby 2.0 at this point. If you find any fixes for this, please feel free
+to send me a pull request.
+
 ## Examples
 ```ruby
 >> require 'magician'
