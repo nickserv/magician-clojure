@@ -1,18 +1,22 @@
 ## 0.3.0
-- Ensure that everything works as expected on Ruby 2.0
-- Add Array#middle, an unsorted version of Array#median
-- Add Math.primes, which implements a fast prime sieve
-- Add an alias for I
-- Fix several issues with Integer#pandigital?
-- Add Numeric#to_radians and Numeric#to_degrees for conversion
-- Support making Math.fibs start with any set of two or more terms
-- Add boolean, coin, and die class/instance methods to the Random class
-- Update the changelog to include changes in previous version 0.2.1
-- Raise RuntimeErrors if Array methods are used that require the Array to consist of
-  Numerics
-- Prefer raising descriptive errors over randomly returning nil
-- Add Array#numerics
-- Simplify and clean up some of the source code
+- Features
+  - Add Math.primes, which implements a fast prime sieve
+  - Add Array#numerics, which finds all Numerics in an Array
+  - Add Array#middle, an unsorted version of Array#median
+  - Add Numeric#to_radians and Numeric#to_degrees for conversion
+  - Add #boolean, #coin, and #die class/instance methods to the Random class
+  - Add an alias for Complex::I
+- Changes
+  - If an Array method that uses Numerics is called on an Array with non-Numeric
+    objects, magician will raise a RuntimeError instead of filtering out
+    non-Numeric objects without warning
+  - Methods will now tend to prefer raising descriptive errors over returning
+    nil without warning
+  - Support making Math.fibs start with any set of two or more terms
+  - Simplify and clean up some of the source code
+- Fixes
+  - Fix several issues with Integer#pandigital?
+  - Update the changelog to include changes in previous version 0.2.1
 
 ## 0.2.1
 - Fix an issue with Array#median giving inaccurate results (it wasn't sorting
