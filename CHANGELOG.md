@@ -8,6 +8,11 @@
 - Support making Math.fibs start with any set of two or more terms
 - Add boolean, coin, and die class/instance methods to the Random class
 - Update the changelog to include changes in previous version 0.2.1
+- Raise RuntimeErrors if Array methods are used that require the Array to consist of
+  Numerics
+- Prefer raising descriptive errors over randomly returning nil
+- Add Array#numerics
+- Simplify and clean up some of the source code
 
 ## 0.2.1
 - Fix an issue with Array#median giving inaccurate results (it wasn't sorting
