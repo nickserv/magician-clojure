@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "magician"
-  s.version = "0.2.1"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nicolas McCurdy"]
-  s.date = "2012-12-10"
+  s.date = "2013-03-18"
   s.description = "A suite of handy methods for doing calculations in irb."
   s.email = "thenickperson@gmail.com"
   s.extra_rdoc_files = [
@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
     "lib/magician/integer.rb",
     "lib/magician/math.rb",
     "lib/magician/numeric.rb",
+    "lib/magician/random.rb",
     "lib/magician/shortcuts.rb",
     "lib/magician/string.rb",
     "magician.gemspec",
@@ -38,6 +39,7 @@ Gem::Specification.new do |s|
     "spec/integer_spec.rb",
     "spec/math_spec.rb",
     "spec/numeric_spec.rb",
+    "spec/random_spec.rb",
     "spec/shortcuts_spec.rb",
     "spec/spec_helper.rb",
     "spec/string_spec.rb"
@@ -45,34 +47,34 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/thenickperson/magician"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.24"
+  s.rubygems_version = "1.8.23"
   s.summary = "A suite of handy methods for doing calculations in irb."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<rspec>, ["~> 2.12.0"])
+      s.add_development_dependency(%q<rspec>, ["~> 2.13"])
       s.add_development_dependency(%q<yard>, ["~> 0.7"])
-      s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
-      s.add_development_dependency(%q<bundler>, [">= 0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_development_dependency(%q<simplecov>, [">= 0"])
+      s.add_development_dependency(%q<rdoc>, ["~> 4.0"])
+      s.add_development_dependency(%q<bundler>, ["~> 1.2"])
+      s.add_development_dependency(%q<jeweler>, ["~> 1.8"])
+      s.add_development_dependency(%q<simplecov>, ["~> 0.7"])
     else
-      s.add_dependency(%q<rspec>, ["~> 2.12.0"])
+      s.add_dependency(%q<rspec>, ["~> 2.13"])
       s.add_dependency(%q<yard>, ["~> 0.7"])
-      s.add_dependency(%q<rdoc>, ["~> 3.12"])
-      s.add_dependency(%q<bundler>, [">= 0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_dependency(%q<simplecov>, [">= 0"])
+      s.add_dependency(%q<rdoc>, ["~> 4.0"])
+      s.add_dependency(%q<bundler>, ["~> 1.2"])
+      s.add_dependency(%q<jeweler>, ["~> 1.8"])
+      s.add_dependency(%q<simplecov>, ["~> 0.7"])
     end
   else
-    s.add_dependency(%q<rspec>, ["~> 2.12.0"])
+    s.add_dependency(%q<rspec>, ["~> 2.13"])
     s.add_dependency(%q<yard>, ["~> 0.7"])
-    s.add_dependency(%q<rdoc>, ["~> 3.12"])
-    s.add_dependency(%q<bundler>, [">= 0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-    s.add_dependency(%q<simplecov>, [">= 0"])
+    s.add_dependency(%q<rdoc>, ["~> 4.0"])
+    s.add_dependency(%q<bundler>, ["~> 1.2"])
+    s.add_dependency(%q<jeweler>, ["~> 1.8"])
+    s.add_dependency(%q<simplecov>, ["~> 0.7"])
   end
 end
 
