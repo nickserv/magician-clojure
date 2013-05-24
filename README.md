@@ -1,15 +1,21 @@
-# magician [![Gem Version](https://badge.fury.io/rb/magician.png)](http://badge.fury.io/rb/magician) [![Build Status](https://secure.travis-ci.org/thenickperson/magician.png?branch=master)](http://travis-ci.org/thenickperson/magician) [![Dependency Status](https://gemnasium.com/thenickperson/magician.png)](https://gemnasium.com/thenickperson/magician) [![Code Climate](https://codeclimate.com/github/thenickperson/magician.png)](https://codeclimate.com/github/thenickperson/magician)
+# Magician [![Gem Version](https://badge.fury.io/rb/magician.png)](http://badge.fury.io/rb/magician) [![Build Status](https://secure.travis-ci.org/thenickperson/magician.png?branch=master)](http://travis-ci.org/thenickperson/magician) [![Dependency Status](https://gemnasium.com/thenickperson/magician.png)](https://gemnasium.com/thenickperson/magician) [![Code Climate](https://codeclimate.com/github/thenickperson/magician.png)](https://codeclimate.com/github/thenickperson/magician)
 
 A suite of handy methods for doing calculations in irb.
 
-## [Documentation](http://rubydoc.info/github/thenickperson/magician/frames)
+## Installation
+Add this line to your application's Gemfile:
 
-## A note on Ruby 2.0 support
-With the latest release of magician, all tests pass on Ruby 1.9 and 2.0.
-However, magician depends on jeweler to work, which unfortunately does not seem
-to be compatible with Ruby 2.0 yet. As a result, magician will most likely not
-work on Ruby 2.0 at this point. If you come up with any fixes for this, please
-feel free to send me a pull request.
+    gem 'magician'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install magician
+
+## [Documentation](http://rubydoc.info/github/thenickperson/magician/frames)
 
 ## Examples
 ```ruby
@@ -41,19 +47,9 @@ feel free to send me a pull request.
 => true
 ```
 
-## Contributing to magician
-- Check out the latest master to make sure the feature hasn't been implemented
-  or the bug hasn't been fixed yet.
-- Check out the issue tracker to make sure someone already hasn't requested it
-  and/or contributed it.
-- Fork the project.
-- Start a feature/bugfix branch.
-- Commit and push until you are happy with your contribution.
-- Make sure to add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-- Please try not to mess with the Rakefile, version, or history. If you want to
-  have your own version, or is otherwise necessary, that is fine, but please
-  isolate to its own commit so I can cherry-pick around it.
-
-## Copyright
-Copyright (c) 2013 Nicolas McCurdy. See LICENSE.txt for further details.
+## Contributing
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
