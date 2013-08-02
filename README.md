@@ -1,4 +1,8 @@
-# Magician [![Gem Version](https://badge.fury.io/rb/magician.png)](http://badge.fury.io/rb/magician) [![Build Status](https://secure.travis-ci.org/thenickperson/magician.png?branch=master)](http://travis-ci.org/thenickperson/magician) [![Dependency Status](https://gemnasium.com/thenickperson/magician.png)](https://gemnasium.com/thenickperson/magician) [![Code Climate](https://codeclimate.com/github/thenickperson/magician.png)](https://codeclimate.com/github/thenickperson/magician)
+# Magician
+[![Gem Version](https://badge.fury.io/rb/magician.png)](http://badge.fury.io/rb/magician)
+[![Build Status](https://secure.travis-ci.org/thenickperson/magician.png?branch=master)](http://travis-ci.org/thenickperson/magician)
+[![Dependency Status](https://gemnasium.com/thenickperson/magician.png)](https://gemnasium.com/thenickperson/magician)
+[![Code Climate](https://codeclimate.com/github/thenickperson/magician.png)](https://codeclimate.com/github/thenickperson/magician)
 
 A suite of handy methods for doing calculations in irb.
 
