@@ -9,25 +9,6 @@ describe Array do
     [1, 'two', 3, 'four'].numerics.should == [1, 3]
   end
 
-  it 'should calculate its sum' do
-    [].sum.should           == 0
-    [1].sum.should          == 1
-    [1, 2, 3, 4].sum.should == 10
-    [-4, 0, 5].sum.should   == 1
-
-    expect { ['string'].sum }.to    raise_error RuntimeError
-    expect { ['string', 1].sum }.to raise_error RuntimeError
-  end
-
-  it 'should calculate its product' do
-    [].product.should        == 1
-    [1].product.should       == 1
-    [5, 7, 2].product.should == 70
-
-    expect { ['string'].product }.to    raise_error RuntimeError
-    expect { ['string', 1].product }.to raise_error RuntimeError
-  end
-
   it 'should calculate its middle' do
     [].middle.should              == nil
     [4].middle.should             == 4.0

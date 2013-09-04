@@ -10,30 +10,6 @@ class Array
     select { |item| item.class <= Numeric }
   end
 
-  # Gets the sum of the array elements. The sum of an empty array is 0. The
-  # array must only contain Numerics or a RuntimeError will be raised.
-  #
-  # @return [Numeric] the sum of the elements of the array
-  #
-  # @raise [RuntimeError] if the Array contains non-Numeric objects
-  def sum
-    require_numerics
-
-    empty? ? 0 : reduce(:+)
-  end
-
-  # Gets the product of the array elements. The product of an empty array is 1.
-  # The array must only contain Numerics or a RuntimeError will be raised.
-  #
-  # @return [Numeric] the product of the elements of the array
-  #
-  # @raise [RuntimeError] if the Array contains non-Numeric objects
-  def product
-    require_numerics
-
-    empty? ? 1 : reduce(:*)
-  end
-
   # Finds the middle element of the array. If the array has an even number of
   # elements, the middle two elements will be averaged. The middle of an empty
   # array is nil. The array must only contain Numerics or a RuntimeError will be
@@ -73,6 +49,7 @@ class Array
   def mean
     require_numerics
 
+    sum = empty? ? 0 : reduce(:+)
     empty? ? nil : sum.to_f / length
   end
 

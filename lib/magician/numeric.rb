@@ -12,20 +12,6 @@ class Numeric
     n.zero? ? false : modulo(n).zero?
   end
 
-  # Performs to_s[selection].to_i on the number. Note that for floats, the
-  # decimal counts as a digit within the string.
-  #
-  # @param [Range] selection the selection/range to get from the number (you can
-  #   use anything that works with the [] syntax)
-  #
-  # @return [Integer] substring of the number (using []), converted to an
-  #   Integer
-  #
-  # @deprecated Avoid using this any more. It's inaccurate and not very useful.
-  def digits selection
-    to_s[selection].to_i
-  end
-
   # Converts the number from degrees to radians and returns the result.
   #
   # @return [Numeric] the number in radians
