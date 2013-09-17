@@ -7,7 +7,8 @@
            :depends-on (#:fiveam)
            :pathname "src/"
            :components
-           ((:file "package")))
+           ((:file "package")
+            (:file "string" :depends-on ("package"))))
 
 (defsystem #:magician-test
            :serial t
@@ -15,4 +16,5 @@
            :depends-on (#:magician)
            :pathname "test/"
            :components
-           ((:file "helper")))
+           ((:file "helper")
+            (:file "test_string" :depends-on ("helper"))))

@@ -1,5 +1,6 @@
 ;;;; Magician package
 
 (defpackage #:magician
-  (:use #:cl))
+  (:use #:cl)
+  (:export #:is-palindrome-p))
 
