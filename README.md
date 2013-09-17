@@ -1,5 +1,9 @@
 # Magician
-A suite of handy methods for doing calculations in irb.
+A suite of handy functions for doing calculations in Common Lisp.
+
+## Documentation
+Please see the docstrings. A link to generated documentation may be added in the
+future.
 
 ## Installation
 Add this line to your application's Gemfile:
