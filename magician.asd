@@ -16,4 +16,5 @@
            :depends-on (#:magician)
            :pathname "test/"
            :components
-           ((:file "test_magician")))
+           ((:file "helper")
+            (:file "tests" :depends-on ("helper"))))
