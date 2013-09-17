@@ -2,5 +2,6 @@
 
 (defpackage #:magician
   (:use #:cl)
-  (:export #:is-palindrome-p))
+  (:export #:factors
+           #:is-palindrome-p))
 

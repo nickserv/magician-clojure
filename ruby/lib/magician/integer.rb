@@ -1,20 +1,6 @@
 # Magician's extensions to the Integer class.
 class Integer
 
-  # Gets all of the factors of the current integer. If the current integer is
-  # negative, it will be treated as if it were positive (so the results will
-  # never contain negative integers).
-  #
-  # @return [Array] an array of all of the factors of the current integer (in
-  #   order, including 1 and the integer itself)
-  #
-  # @raise [ArgumentError] if the integer is 0, since 0 has infinite factors
-  def factors
-    raise ArgumentError, '0 has infinite factors, so the Array of its factors cannot be computed in finite time' if zero?
-
-    1.upto(abs/2).select { |i| abs % i == 0 } << abs
-  end
-
   # Gets the factorial of the integer, which is equivalent to the product of all
   # integers from 1 to the integer (inclusive). When the integer is 0, it is
   # equivalent to 1.

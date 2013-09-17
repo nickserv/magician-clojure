@@ -2,18 +2,6 @@ require 'spec_helper'
 
 describe Integer do
 
-  it 'should calculate its factors' do
-    1.factors.should == [1]
-    6.factors.should == [1, 2, 3, 6]
-    7.factors.should == [1, 7]
-
-    -1.factors.should == [1]
-    -6.factors.should == [1, 2, 3, 6]
-    -7.factors.should == [1, 7]
-
-    expect { 0.factors }.to raise_error ArgumentError
-  end
-
   it 'should calculate its factorial' do
     0.factorial.should  == 1
     1.factorial.should  == 1

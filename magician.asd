@@ -8,6 +8,7 @@
            :pathname "src/"
            :components
            ((:file "package")
+            (:file "integer" :depends-on ("package"))
             (:file "string" :depends-on ("package"))))
 
 (defsystem #:magician-test
@@ -17,4 +18,5 @@
            :pathname "test/"
            :components
            ((:file "helper")
+            (:file "test_integer" :depends-on ("helper"))
             (:file "test_string" :depends-on ("helper"))))
