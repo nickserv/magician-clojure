@@ -1,4 +1,4 @@
-(in-package #:magician)
+(in-package #:magician-test)
 (in-package :it.bese.fiveam)
 
 (def-suite :magician)
