@@ -2,9 +2,8 @@
 
 (in-package #:magician)
 
-; Returns true if the string is a palindrome (meaning it is the same forward
-; and backward).
-;
-; @return [Boolean] true if the string is a palindrome
 (defun is-palindrome-p (str)
+  "Returns true if a string is a palindrome.
+
+  A palindrome string is the same forward and backward."
   (string= str (reverse str)))

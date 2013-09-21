@@ -3,8 +3,8 @@
 (def-suite string)
 (in-suite string)
 
-; should determine if it is a palindrome
 (test is-palindrome-p
+      "should determine if it is a palindrome"
       (is-true (magician:is-palindrome-p ""))
       (is-true (magician:is-palindrome-p "a"))
       (is-true (magician:is-palindrome-p "deed"))
