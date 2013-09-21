@@ -2,8 +2,11 @@
 
 (defpackage #:magician
   (:use #:cl)
-  (:export #:factorial
+  (:export #:degrees->radians
+           #:factorial
            #:factors
+           #:is-divisible-p
            #:is-palindrome-p
-           #:is-prime-p))
+           #:is-prime-p
+           #:radians->degrees))
 

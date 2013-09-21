@@ -9,6 +9,7 @@
            :components
            ((:file "package")
             (:file "integer" :depends-on ("package"))
+            (:file "numeric" :depends-on ("package"))
             (:file "string" :depends-on ("package"))))
 
 (defsystem #:magician-test
@@ -19,4 +20,5 @@
            :components
            ((:file "helper")
             (:file "test_integer" :depends-on ("helper"))
+            (:file "test_numeric" :depends-on ("helper"))
             (:file "test_string" :depends-on ("helper"))))
