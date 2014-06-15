@@ -1,6 +1,6 @@
-(ns magician.numeric)
-
 ;;;;  Magician's extensions to the Numeric class (affects Integers and Floats).
+
+(ns magician.numeric)
 
 (defn divisible?
   "Returns true if for numbers x and y, x is evenly divisible by y.

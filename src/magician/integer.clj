@@ -1,7 +1,7 @@
+;;;; Magician's extensions to the Integer class.
+
 (ns magician.integer
   (:require [clojure.math.numeric-tower]))
-
-;;;; Magician's extensions to the Integer class.
 
 (defn factorial
   "Gets the factorial of an integer.
