@@ -24,4 +24,4 @@
   (if (<= n 1)
     false
     (not-any? (fn [i] (= (mod n i) 0))
-            (range 2 (clojure.math.numeric-tower/sqrt n)))))
+      (range 2 (clojure.math.numeric-tower/sqrt n)))))
