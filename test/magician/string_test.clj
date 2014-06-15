@@ -1,6 +1,6 @@
-(ns magician.core-test
+(ns magician.string-test
   (:require [clojure.test :refer :all]
-            [magician.core :refer :all]))
+            [magician.string :refer :all]))
 
 (deftest palindrome?-test
   (is (palindrome? ""))
