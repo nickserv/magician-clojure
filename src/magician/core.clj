@@ -1,6 +1,12 @@
-(ns magician.core)
+(ns magician.core
+  (:require [clojure.string]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+;;;; Magician's extensions to the String class.
+
+(defn palindrome?
+  "Returns true if a string is a palindrome.
+
+  A palindrome string is the same forward and backward."
+  [string]
+  (= string (clojure.string/reverse string)))
+
