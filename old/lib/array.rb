@@ -74,19 +74,6 @@ class Array
     occ.select { |key, value| value == max_occ }.keys
   end
 
-  # Gets a hash table with the number of occurrences of each item from the
-  # original array. The keys are the items from the original array, and the
-  # values are integers counting the number of occurrences of the associated key
-  # values.
-  #
-  # @return [Hash] a hash table of the occurrences of each item from the original
-  #   array
-  def occurences
-    occurences = Hash.new 0
-    each { |item| occurences[item] += 1 }
-    occurences
-  end
-
   # Alias average to mean.
   alias :average :mean
 

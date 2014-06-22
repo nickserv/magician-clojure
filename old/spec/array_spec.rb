@@ -50,15 +50,6 @@ describe Array do
     [1, 1, 1, 2, 2, 2, 3].mode.should == [1, 2]
   end
 
-  it 'should calculate a hash holding numbers of occurrences of its items' do
-    [].occurences.should            == {}
-    ['string'].occurences.should    == { 'string'=>1 }
-    [4].occurences.should           == { 4=>1 }
-    ['string', 4].occurences.should == { 'string'=>1, 4=>1 }
-
-    [1, 2, 2, 5].occurences.should == { 1=>1, 2=>2, 5=>1 }
-  end
-
   it 'should let Array#average be used as an alias to Array#mean' do
     [4].average.should == 4.0
   end
