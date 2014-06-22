@@ -3,7 +3,6 @@
             [magician.numeric :refer :all]))
 
 (deftest divisible?-test
-  "should determine if it is divisible by another number"
   (is (divisible? 0 5))
   (is (not (divisible? 1 6)))
   (is (divisible? -1 1))
@@ -16,7 +15,6 @@
   (is (not (divisible? 10.5 1))))
 
 (deftest degrees->radians-test
-  "should convert angles to radians"
   (is (= 0.0 (degrees->radians 0)))
   (is (= (/ Math/PI 2) (degrees->radians 90)))
   (is (= Math/PI (degrees->radians 180)))
@@ -25,7 +23,6 @@
   (is (= (- (/ Math/PI 2)) (degrees->radians -90))))
 
 (deftest radians->degrees-test
-  "should convert angles to degrees"
   (is (= 0.0 (radians->degrees 0)))
   (is (= 90.0 (radians->degrees (/ Math/PI 2))))
   (is (= 180.0 (radians->degrees Math/PI)))
