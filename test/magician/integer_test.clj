@@ -3,13 +3,13 @@
             [magician.integer :refer :all]))
 
 (deftest factors-test
-  (is (= '(1) (factors 1)))
-  (is (= '(1 2 3 6) (factors 6)))
-  (is (= '(1 7) (factors 7)))
+  (is (= #{1} (factors 1)))
+  (is (= #{1 2 3 6} (factors 6)))
+  (is (= #{1 7} (factors 7)))
 
-  (is (= '(1) (factors -1)))
-  (is (= '(1 2 3 6) (factors -6)))
-  (is (= '(1 7) (factors -7))))
+  (is (= #{1} (factors -1)))
+  (is (= #{1 2 3 6} (factors -6)))
+  (is (= #{1 7} (factors -7))))
 ;expect { 0.factors }.to raise_error ArgumentError
 
 (deftest factorial-test

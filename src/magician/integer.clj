@@ -13,12 +13,12 @@
   ;@raise [ArgumentError] if the integer is 0, since 0 has infinite factors
   [n]
   (let [maximum (Math/abs n)]
-    (distinct
-      (concat
+    (conj
+      (set
         (filter
           #(magician.numeric/divisible? maximum %)
-          (range 1 (+ (/ maximum 2) 1)))
-        (list maximum)))))
+          (range 1 (+ (/ maximum 2) 1))))
+      maximum)))
 ;raise ArgumentError, '0 has infinite factors, so the Array of its factors cannot be computed in finite time' if zero?
 
 (defn factorial
