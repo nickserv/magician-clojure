@@ -1,15 +1,6 @@
 # Magician's extensions to the Array class.
 class Array
 
-  # Returns all numbers from the array, in order. This is done by choosing all
-  # objects from the array that are instances of Numeric or one of its
-  # subclasses.
-  #
-  # @return [Array] a new array containing only Numerics
-  def numerics
-    select { |item| item.class <= Numeric }
-  end
-
   # Finds the middle element of the array. If the array has an even number of
   # elements, the middle two elements will be averaged. The middle of an empty
   # array is nil. The array must only contain Numerics or a RuntimeError will be
