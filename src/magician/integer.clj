@@ -32,6 +32,17 @@
     (= n 0) 1
     (> n 0) (reduce * (range 1 (inc n)))))
 
+(defn pandigital?
+  "Returns true if the integer is pandigital. That is, the integer contains
+  each of the digits from 1 to 9 exactly once.
+
+  @return [Boolean] true if the integer is pandigital"
+  [x]
+  (= "123456789"
+    (clojure.string/join
+      (sort
+        (clojure.string/split (str x) #"")))))
+
 (defn prime?
   "Returns true if an integer is prime.
 

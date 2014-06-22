@@ -19,6 +19,16 @@
   (is (= 120 (factorial 5)))
   (is (= 3628800 (factorial 10))))
 
+(deftest pandigital?-test
+  (is (pandigital? 123456789))
+  (is (pandigital? 987654321))
+  (is (pandigital? 192837465))
+
+  (is (not (pandigital? 12345)))
+  (is (not (pandigital? 1234567890)))
+  (is (not (pandigital? 1234567899)))
+  (is (not (pandigital? 112233445566778899))))
+
 (deftest prime?-test
   (is (not (prime? 0)))
   (is (not (prime? 1)))
