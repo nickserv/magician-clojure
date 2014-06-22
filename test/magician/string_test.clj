@@ -3,6 +3,7 @@
             [magician.string :refer :all]))
 
 (deftest palindrome?-test
+  "determines if it is a palindrome"
   (is (palindrome? ""))
   (is (palindrome? "a"))
   (is (palindrome? "deed"))
