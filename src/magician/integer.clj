@@ -1,7 +1,25 @@
 ;;;; Magician's extensions to the Integer class.
 
 (ns magician.integer
-  (:require [clojure.math.numeric-tower]))
+  (:require [clojure.math.numeric-tower]
+            [magician.numeric]))
+
+(defn factors
+  "Gets a list of factors of an integer.
+
+  The list will be in order, including 1 and the integer itself. If the integer
+  is negative, it will be treated as if it were positive (so the results will
+  never contain negative integers)."
+  ;@raise [ArgumentError] if the integer is 0, since 0 has infinite factors
+  [n]
+  (let [maximum (Math/abs n)]
+    (distinct
+      (concat
+        (filter
+          #(magician.numeric/divisible? maximum %)
+          (range 1 (+ (/ maximum 2) 1)))
+        (list maximum)))))
+;raise ArgumentError, '0 has infinite factors, so the Array of its factors cannot be computed in finite time' if zero?
 
 (defn factorial
   "Gets the factorial of an integer.
